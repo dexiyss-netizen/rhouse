@@ -73,6 +73,11 @@
             .hero-image { position: absolute !important; inset: 0 !important; height: 100% !important; opacity: 0.25 !important; z-index: -1 !important; pointer-events: none !important; }
             .logo { font-size: 38px !important; }
             #btn-operator svg { width: 40px !important; height: 40px !important; min-width: 40px !important; }
+            /* Жесткая фиксация сетки для компьютеров */
+        @media (min-width: 769px) {
+            .hero .container { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 50px !important; align-items: center !important; }
+            .hero-image { position: relative !important; inset: auto !important; height: 380px !important; opacity: 1 !important; z-index: 1 !important; pointer-events: auto !important; }
+        }
         }
     </style>
 </head>
