@@ -24,7 +24,7 @@
         .logo { font-size: 26px; font-weight: 900; letter-spacing: 1.5px; background: linear-gradient(45deg, #fff, #a855f7, #3b82f6); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 4s linear infinite; }
         @keyframes shine { to { background-position: 200% center; } }
 
-        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav ul { display: flex; list-: none; gap: 30px; }
         nav ul a { font-weight: 500; transition: 0.3s; }
         nav ul a:hover { color: #a855f7; }
 
@@ -53,7 +53,8 @@
             .hero-text div { width: 100%; }
             #btn-order { padding: 16px 20px !important; font-size: 16px !important; width: 100%; display: block; }
             #btn-operator { padding: 16px 20px !important; font-size: 16px !important; width: 100%; display: inline-flex; justify-content: center; }
-            .hero-image { height: 280px !important; }
+            .hero-image { position: absolute !important; inset: 0 !important; height: 100% !important; opacity: 0.25 !important; z-index: -1 !important; pointer-events: none !important; }
+
         }
 
     </style>
@@ -96,7 +97,7 @@
                                         <!-- Контейнер для кнопок главного экрана -->
                     <div style="display: flex; flex-direction: column; gap: 15px; align-items: flex-start;">
                         <a href="#contact" class="btn-contact" style="padding: 16px 40px; font-size: 18px;" id="btn-order">Замовити сайт</a>
-                        <a href="https://t.me/zigyr19991" target="_blank" class="btn-contact" style="padding: 16px 40px; font-size: 18px; display: inline-flex; align-items: center; gap: 8px;" id="btn-operator">Або написати в телеграм оператору <svg style="width: 20px; height: 20px; fill: currentColor;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.07-1.02-.37-1.58-.74-.88-.58-1.38-.94-2.23-1.51-.99-.65-.35-1.01.22-1.65.15-.16 2.72-2.49 2.77-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.03-.27-.01-.12.02-1.95 1.23-5.51 3.63-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.4-.49 1.13-.75 4.41-1.92 7.35-3.19 8.83-3.81 4.21-1.78 5.08-2.09 5.65-2.1.13 0 .42.03.61.19.16.14.21.33.23.47-.01.07.01.22 0 .29z"/></svg></a>
+                        <a href="https://t.me/zigyr19991" target="_blank" class="btn-contact" style="padding: 16px 40px; font-size: 18px; display: inline-flex; align-items: center; gap: 8px;" id="btn-operator">Або написати в телеграм оператору <svg style="width: 24px; height: 24px; fill: currentColor;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.07-1.02-.37-1.58-.74-.88-.58-1.38-.94-2.23-1.51-.99-.65-.35-1.01.22-1.65.15-.16 2.72-2.49 2.77-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.03-.27-.01-.12.02-1.95 1.23-5.51 3.63-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.4-.49 1.13-.75 4.41-1.92 7.35-3.19 8.83-3.81 4.21-1.78 5.08-2.09 5.65-2.1.13 0 .42.03.61.19.16.14.21.33.23.47-.01.07.01.22 0 .29z"/></svg></a>
 
                     </div>
 
