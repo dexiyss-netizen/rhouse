@@ -118,102 +118,125 @@
         <style>
             .service-card:hover { transform: translateY(-5px); border-color: #3b82f6 !important; background: rgba(59, 130, 246, 0.02) !important; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.05); }
         </style>
-        <!-- Раздел Контакты -->
-        <section id="contact" style="padding: 100px 0; background: #06060a; border-top: 1px solid rgba(255, 255, 255, 0.03);">
-            <div class="container" style="max-width: 600px; margin: 0 auto; text-align: center;">
-                <h2 id="form-title" style="font-size: 38px; font-weight: 800; margin-bottom: 10px;">Розпочнемо проєкт?</h2>
-                <p id="form-subtitle" style="color: #9ca3af; margin-bottom: 35px;">Залиште заявку, і наш аналітик зв'яжеться з вами протягом 15 хвилин для обговорення деталей.</p>
+<!-- Раздел Контакты с фоновой отправкой (AJAX) -->
+<section id="contact" style="padding: 100px 0; background: #06060a; border-top: 1px solid rgba(255, 255, 255, 0.03);">
+    <div class="container" style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <h2 id="form-title" style="font-size: 38px; font-weight: 800; margin-bottom: 10px;">Розпочнемо проєкт?</h2>
+        <p id="form-subtitle" style="color: #9ca3af; margin-bottom: 35px;">Залиште заявку, і наш аналітик зв'яжеться з вами протягом 15 хвилин для обговорення деталей.</p>
+        
+        <form id="ajaxForm" action="https://formspree.io" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+            <input type="text" name="name" id="input-name" placeholder="Ваше ім'я" required style="width: 100%; padding: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; color: #fff; font-size: 16px;">
+            <input type="email" name="email" id="input-email" placeholder="Ваш Email" required style="width: 100%; padding: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; color: #fff; font-size: 16px;">
+            <textarea name="message" id="input-msg" rows="5" placeholder="Розкажіть трохи про ваш проєкт..." required style="width: 100%; padding: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; color: #fff; font-size: 16px; resize: vertical;"></textarea>
+            
+            <button type="submit" id="btn-submit" class="btn-contact" style="border: none; cursor: pointer; padding: 16px; width: 100%;">Надіслати заявку</button>
+        </form>
+    </div>
+</section>
+
+</main>
+
+<footer style="text-align: center; padding: 40px; color: #4b5563; font-size: 14px; border-top: 1px solid rgba(255, 255, 255, 0.02);">
+    <p>&copy; 2026 R. House Digital Agency. All rights reserved.</p>
+</footer>
+
+<!-- Скрипт мультиязычности и тихой фоновой отправки -->
+<script>
+    window.translations = { 
+        uk: {
+            navServices: "Послуги", navContact: "Контакти", btnDiscuss: "Обговорити проєкт",
+            heroTitle: "Ми створюємо сайти, які <span style='background: linear-gradient(45deg, #a855f7, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;'>розвивають ваш бізнес</span>",
+            heroDesc: "Digital-агентство R. House — проєктування інтерфейсів, розробка складних вебсистем, internet-магазинів та корпоративних сайтів з упором на преміальний дизайн.",
+            btnOrder: "Замовити сайт", servicesTitle: "Що ми вміємо робити чудово",
+            s1Title: "Corporate Websites", s1Desc: "Ексклюзивний дизайн, що підкреслює статус вашої компанії. Швидке завантаження та повна адаптивність под смартфони.",
+            s2Title: "Інтернет-магазини", s2Desc: "Зручні каталоги, продумані кошики та інтеграція з платіжними системами для автоматизації ваших продажів.",
+            s3Title: "Landing Page", s3Desc: "Односторінкові сайти з високою конверсією, що б'ють точно в ціль і перетворюють відвідувачів на клієнтів.",
+            formTitle: "Розпочнемо проєкт?", formSubtitle: "Залиште заявку, и наш аналітик зв'яжеться з вами протягом 15 хвилин для обговорення деталей.",
+            inputName: "Ваше ім'я", inputEmail: "Ваш Email", inputMsg: "Розкажіть трохи про ваш проєкт...", btnSubmit: "Надіслати заявку"
+        }, 
+        ru: {
+            navServices: "Услуги", navContact: "Контакты", btnDiscuss: "Обсудить проект",
+            heroTitle: "Мы создаем сайты, которые <span style='background: linear-gradient(45deg, #a855f7, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;'>развивают ваш бизнес</span>",
+            heroDesc: "Digital-агентство R. House — проектирование интерфейсов, разработка сложных веб-систем, интернет-магазинов и корпоративных сайтов с упором на премиальный дизайн.",
+            btnOrder: "Заказать сайт", servicesTitle: "Что мы умеем делать превосходно",
+            s1Title: "Корпоративные сайты", s1Desc: "Эксклюзивный дизайн, подчеркивающий статус вашей компании. Быстрая загрузка и полная адаптивность под смартфоны.",
+            s2Title: "Интернет-магазины", s2Desc: "Удобные каталоги, продуманные корзины и интеграция с платежными системами для автоматизации ваших продаж.",
+            s3Title: "Landing Page", s3Desc: "Одностраничные сайты с высокой конверсией, бьющие точно в цель и превращающие посетителей в клиентов.",
+            formTitle: "Начнем проект?", formSubtitle: "Оставьте заявку, и наш аналитик свяжется с вами в течение 15 минут для обсуждения деталей.",
+            inputName: "Ваше имя", inputEmail: "Ваш Email", inputMsg: "Расскажите немного о вашем проекте...", btnSubmit: "Отправить заявку"
+        } 
+    };
+
+    function setLanguage(lang) {
+        document.getElementById('btn-uk').classList.toggle('active', lang === 'uk');
+        document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
+        document.getElementById('nav-services').innerText = window.translations[lang].navServices;
+        document.getElementById('nav-contact').innerText = window.translations[lang].navContact;
+        document.getElementById('btn-discuss').innerText = window.translations[lang].btnDiscuss;
+        document.getElementById('hero-title').innerHTML = window.translations[lang].heroTitle;
+        document.getElementById('hero-desc').innerText = window.translations[lang].heroDesc;
+        document.getElementById('btn-order').innerText = window.translations[lang].btnOrder;
+        document.getElementById('services-title').innerText = window.translations[lang].servicesTitle;
+        document.getElementById('s1-title').innerText = window.translations[lang].s1Title;
+        document.getElementById('s1-desc').innerText = window.translations[lang].s1Desc;
+        document.getElementById('s2-title').innerText = window.translations[lang].s2Title;
+        document.getElementById('s2-desc').innerText = window.translations[lang].s2Desc;
+        document.getElementById('s3-title').innerText = window.translations[lang].s3Title;
+        document.getElementById('s3-desc').innerText = window.translations[lang].s3Desc;
+        document.getElementById('form-title').innerText = window.translations[lang].formTitle;
+        document.getElementById('form-subtitle').innerText = window.translations[lang].formSubtitle;
+        document.getElementById('input-name').placeholder = window.translations[lang].inputName;
+        document.getElementById('input-email').placeholder = window.translations[lang].inputEmail;
+        document.getElementById('input-msg').placeholder = window.translations[lang].inputMsg;
+        document.getElementById('btn-submit').innerText = window.translations[lang].btnSubmit;
+        window.currentLang = lang;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        setLanguage('uk');
+
+        const form = document.getElementById('ajaxForm');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
                 
-                <div style="display: flex; flex-direction: column; gap: 15px;">
-                    <input type="text" id="input-name" placeholder="Ваше ім'я" required style="width: 100%; padding: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; color: #fff; font-size: 16px;">
-                    <input type="email" id="input-email" placeholder="Ваш Email" required style="width: 100%; padding: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; color: #fff; font-size: 16px;">
-                    <textarea id="input-msg" rows="5" placeholder="Розкажіть трохи про ваш проєкт..." required style="width: 100%; padding: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; color: #fff; font-size: 16px; resize: vertical;"></textarea>
-                    
-                    <button type="button" id="btn-submit" onclick="sendFormToTelegram()" class="btn-contact" style="border: none; cursor: pointer; padding: 16px; width: 100%;">Надіслати заявку</button>
-                </div>
-            </div>
-        </section>
+                const button = document.getElementById('btn-submit');
+                const originalText = button.innerText;
+                button.innerText = window.currentLang === 'ru' ? 'Отправка...' : 'Надсилання...';
+                button.disabled = true;
 
-    </main>
+                const nameVal = document.getElementById('input-name').value;
+                const emailVal = document.getElementById('input-email').value;
+                const msgVal = document.getElementById('input-msg').value;
 
-    <footer style="text-align: center; padding: 40px; color: #4b5563; font-size: 14px; border-top: 1px solid rgba(255, 255, 255, 0.02);">
-        <p>&copy; 2026 R. House Digital Agency. All rights reserved.</p>
-    </footer>
+                // 1. Отправка на почту через Formspree
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
 
-    <script>
-        window.translations = { 
-            uk: {
-                navServices: "Послуги", navContact: "Контакти", btnDiscuss: "Обговорити проєкт",
-                heroTitle: "Ми створюємо сайти, які <span style='background: linear-gradient(45deg, #a855f7, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;'>розвивають ваш бізнес</span>",
-                heroDesc: "Digital-агентство R. House — проєктування інтерфейсів, розробка складних вебсистем, internet-магазинів та корпоративних сайтів з упором на преміальний дизайн.",
-                btnOrder: "Замовити сайт", servicesTitle: "Що ми вміємо робити чудово",
-                s1Title: "Корпоративні сайти", s1Desc: "Ексклюзивний дизайн, що підкреслює статус вашої компанії. Швидке завантаження та повна адаптивність под смартфони.",
-                s2Title: "Інтернет-магазини", s2Desc: "Зручні catalogs, продумані кошики та інтеграція з платіжними системами для автоматизації ваших продажів.",
-                s3Title: "Landing Page", s3Desc: "Односторінкові сайти з високою конверсією, що б'ють точно в ціль і перетворюють відвідувачів на клієнтів.",
-                formTitle: "Розпочнемо проєкт?", formSubtitle: "Залиште заявку, и наш аналітик зв'яжеться з вами протягом 15 хвилин для обговорення деталей.",
-                inputName: "Ваше ім'я", inputEmail: "Ваш Email", inputMsg: "Розкажіть трохи про ваш проєкт...", btnSubmit: "Надіслати заявку"
-            }, 
-            ru: {
-                navServices: "Услуги", navContact: "Контакты", btnDiscuss: "Обсудить проект",
-                heroTitle: "Мы создаем сайты, которые <span style='background: linear-gradient(45deg, #a855f7, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;'>развивают ваш бизнес</span>",
-                heroDesc: "Digital-агентство R. House — проектирование интерфейсов, разработка сложных веб-систем, интернет-магазинов и корпоративных сайтов с упором на премиальный дизайн.",
-                btnOrder: "Заказать сайт", servicesTitle: "Что мы умеем делать превосходно",
-                s1Title: "Корпоративные сайты", s1Desc: "Эксклюзивный дизайн, подчеркивающий статус вашей компании. Быстрая загрузка и полная адаптивность под смартфоны.",
-                s2Title: "Интернет-магазины", s2Desc: "Удобные каталоги, продуманные корзины и интеграция с платежными системами для автоматизации ваших продаж.",
-                s3Title: "Landing Page", s3Desc: "Одностраничные сайты с высокой конверсией, бьющие точно в цель и превращающие посетителей в клиентов.",
-                formTitle: "Начнем проект?", formSubtitle: "Оставьте заявку, и наш аналитик свяжется с вами в течение 15 минут для обсуждения деталей.",
-                inputName: "Ваше имя", inputEmail: "Ваш Email", inputMsg: "Расскажите немного о вашем проекте...", btnSubmit: "Отправить заявку"
-            } 
-        };
+                // 2. Отправка дубликата в ваш Телеграм-бот
+                let tgText = `🚀 Новая заявка R. House!\n\n👤 Имя: ${nameVal}\n📧 Email: ${emailVal}\n💬 Проект: ${msgVal}`;
+                const token = '5155498557:AAF3uPRE5VTecQFVj9en1RJ5qNByFI1c0cw';
+                const chatId = '8525146713';
+                const tgUrl = `https://telegram.org{token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(tgText)}`;
 
-        function setLanguage(lang) {
-            document.getElementById('btn-uk').classList.toggle('active', lang === 'uk');
-            document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
-            document.getElementById('nav-services').innerText = window.translations[lang].navServices;
-            document.getElementById('nav-contact').innerText = window.translations[lang].navContact;
-            document.getElementById('btn-discuss').innerText = window.translations[lang].btnDiscuss;
-            document.getElementById('hero-title').innerHTML = window.translations[lang].heroTitle;
-            document.getElementById('hero-desc').innerText = window.translations[lang].heroDesc;
-            document.getElementById('btn-order').innerText = window.translations[lang].btnOrder;
-            document.getElementById('services-title').innerText = window.translations[lang].servicesTitle;
-            document.getElementById('s1-title').innerText = window.translations[lang].s1Title;
-            document.getElementById('s1-desc').innerText = window.translations[lang].s1Desc;
-            document.getElementById('s2-title').innerText = window.translations[lang].s2Title;
-            document.getElementById('s2-desc').innerText = window.translations[lang].s2Desc;
-            document.getElementById('s3-title').innerText = window.translations[lang].s3Title;
-            document.getElementById('s3-desc').innerText = window.translations[lang].s3Desc;
-            document.getElementById('form-title').innerText = window.translations[lang].formTitle;
-            document.getElementById('form-subtitle').innerText = window.translations[lang].formSubtitle;
-            document.getElementById('input-name').placeholder = window.translations[lang].inputName;
-            document.getElementById('input-email').placeholder = window.translations[lang].inputEmail;
-            document.getElementById('input-msg').placeholder = window.translations[lang].inputMsg;
-            document.getElementById('btn-submit').innerText = window.translations[lang].btnSubmit;
-            window.currentLang = lang;
+                fetch(tgUrl, { method: 'POST', mode: 'no-cors' })
+                .then(() => {
+                    alert(window.currentLang === 'ru' ? 'Заявка успешно отправлена!' : 'Заявку успішно надіслано!');
+                    form.reset();
+                })
+                .catch(() => {
+                    alert('Ошибка сети / Помилка мережі');
+                })
+                .finally(() => {
+                    button.innerText = originalText;
+                    button.disabled = false;
+                });
+            });
         }
-
-        function sendFormToTelegram() {
-            var nameInput = document.getElementById("input-name");
-            var emailInput = document.getElementById("input-email");
-            var msgInput = document.getElementById("input-msg");
-
-            if (!nameInput.value || !emailInput.value || !msgInput.value) {
-                alert(window.currentLang === "ru" ? "Пожалуйста, заполните все поля!" : "Будь ласка, заповніть усі поля!");
-                return;
-            }
-
-            var text = "🚀 Заявка R. House%0A👤 Имя: " + encodeURIComponent(nameInput.value) + "%0A📧 Email: " + encodeURIComponent(emailInput.value) + "%0A💬 Проект: " + encodeURIComponent(msgInput.value);
-            var url = "https://t.me" + text;
-
-            window.open(url, "_blank");
-
-            nameInput.value = "";
-            emailInput.value = "";
-            msgInput.value = "";
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            setLanguage('uk');
-        });
-    </script>
+    });
+</script>
 </body>
 </html>
