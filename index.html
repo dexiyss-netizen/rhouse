@@ -40,29 +40,26 @@
         [data-fs-error]:not([data-fs-error=''])[data-fs-active] { display: block; color: #dc3545; font-size: 12px; text-align: left; margin-top: 4px; }
         [data-fs-field][aria-invalid="true"] { border-color: #dc3545 !important; background: rgba(220, 53, 69, 0.03) !important; }
                 /* Мобильная адаптация для телефонов */
-                /* Мобильная адаптация для телефонов */
+               /* Мобильная адаптация для телефонов */
         @media (max-width: 768px) {
             .container { width: 92%; }
             header { padding: 10px 0; top: 35px; }
             header .container { flex-direction: column; gap: 10px; text-align: center; }
             nav ul { gap: 15px; margin: 5px 0; font-size: 14px; }
-            .btn-contact { padding: 10px 20px; font-size: 14px; width: 100%; display: block; }
+            .btn-contact { padding: 16px 20px !important; font-size: 16px !important; width: 100% !important; display: inline-flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; box-sizing: border-box !important; }
             .main-content { padding-top: 190px; }
             
-            /* Выравнивание контента и кнопок по центру */
-            .hero .container { grid-template-columns: 1fr; gap: 30px; text-align: center; }
-            .hero-text { display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%; }
+            /* Полное принудительное центрирование контента */
+            .hero .container { grid-template-columns: 1fr !important; gap: 30px !important; text-align: center !important; display: flex !important; flex-direction: column !important; align-items: center !important; }
+            .hero-text { display: flex !important; flex-direction: column !important; align-items: center !important; text-align: center !important; width: 100% !important; }
+            .hero-text div { display: flex !important; flex-direction: column !important; align-items: center !important; width: 100% !important; max-width: 100% !important; margin: 0 auto !important; }
             
-            #hero-title { font-size: 32px !important; line-height: 1.2; width: 100%; max-width: 100%; }
-            #hero-desc { font-size: 15px !important; margin-bottom: 25px; width: 100%; max-width: 100%; }
+            #hero-title { font-size: 32px !important; line-height: 1.2 !important; text-align: center !important; }
+            #hero-desc { font-size: 15px !important; margin-bottom: 25px !important; text-align: center !important; }
             
-            /* Контейнер кнопок по центру экрана */
-            .hero-text div { display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 340px; margin: 0 auto; }
-            
-            #btn-order { padding: 16px 20px !important; font-size: 16px !important; width: 100%; display: block; text-align: center; }
-            #btn-operator { padding: 16px 20px !important; font-size: 16px !important; width: 100%; display: inline-flex; justify-content: center; align-items: center; text-align: center; }
             .hero-image { position: absolute !important; inset: 0 !important; height: 100% !important; opacity: 0.25 !important; z-index: -1 !important; pointer-events: none !important; }
         }
+
 
 
     </style>
