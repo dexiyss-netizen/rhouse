@@ -53,6 +53,15 @@
             
             .btn-contact { padding: 16px 20px !important; font-size: 16px !important; width: 100% !important; display: inline-flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; box-sizing: border-box !important; }
             
+        /* Мобильная адаптация для телефонов */
+        @media (max-width: 768px) {
+            .container { width: 92%; }
+            header { padding: 10px 0; top: 35px; }
+            header .container { flex-direction: column; gap: 10px; text-align: center; }
+            nav ul { gap: 15px; margin: 5px 0; font-size: 14px; }
+            .btn-contact { padding: 16px 20px !important; font-size: 16px !important; width: 100% !important; display: inline-flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; box-sizing: border-box !important; }
+            .main-content { padding-top: 190px; }
+            
             /* Полное принудительное центрирование контента */
             .hero .container { grid-template-columns: 1fr !important; gap: 30px !important; text-align: center !important; display: flex !important; flex-direction: column !important; align-items: center !important; }
             .hero-text { display: flex !important; flex-direction: column !important; align-items: center !important; text-align: center !important; width: 100% !important; }
@@ -62,12 +71,9 @@
             #hero-desc { font-size: 15px !important; margin-bottom: 25px !important; text-align: center !important; }
             
             .hero-image { position: absolute !important; inset: 0 !important; height: 100% !important; opacity: 0.25 !important; z-index: -1 !important; pointer-events: none !important; }
-                        .logo { font-size: 38px !important; }
-                        #btn-operator svg { width: 40px !important; height: 40px !important; min-width: 40px !important; }
-
-
+            .logo { font-size: 38px !important; }
+            #btn-operator svg { width: 40px !important; height: 40px !important; min-width: 40px !important; }
         }
-
     </style>
 </head>
 <body>
