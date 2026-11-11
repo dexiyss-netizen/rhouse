@@ -5,53 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>R. House — Premium Web Development</title>
     <style>
-        /* Главные стили премиальной темной темы */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         body { background-color: #0b0b12; color: #ffffff; line-height: 1.6; overflow-x: hidden; }
         a { color: inherit; text-decoration: none; }
         .container { width: 90%; max-width: 1200px; margin: 0 auto; }
-
-        /* Верхняя панель переключения языков */
         .lang-bar { background: #06060a; border-bottom: 1px solid rgba(255, 255, 255, 0.03); padding: 8px 0; font-size: 13px; text-align: right; position: fixed; width: 100%; top: 0; z-index: 1001; }
         .lang-btn { background: none; border: none; color: #6b7280; cursor: pointer; margin-left: 15px; font-weight: 600; transition: color 0.3s; }
         .lang-btn.active { color: #a855f7; text-shadow: 0 0 10px rgba(168, 85, 247, 0.5); }
-
-        /* Шапка под языковой панелью */
         header { padding: 20px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); position: fixed; width: 100%; top: 35px; background: rgba(11, 11, 18, 0.85); backdrop-filter: blur(10px); z-index: 1000; }
         header .container { display: flex; justify-content: space-between; align-items: center; }
-        
-        /* Логотип R. House с анимацией свечения */
         .logo { font-size: 26px; font-weight: 900; letter-spacing: 1.5px; background: linear-gradient(45deg, #fff, #a855f7, #3b82f6); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 4s linear infinite; }
         @keyframes shine { to { background-position: 200% center; } }
-
         nav ul { display: flex; list-style: none; gap: 30px; }
         nav ul a { font-weight: 500; transition: 0.3s; }
         nav ul a:hover { color: #a855f7; }
-
         .btn-contact { background: linear-gradient(45deg, #a855f7, #3b82f6); padding: 12px 24px; border-radius: 6px; font-weight: 600; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2); transition: all 0.3s ease; display: inline-block; text-align: center; border: none; cursor: pointer; color: #fff; }
         .btn-contact:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4); }
-
         .main-content { padding-top: 120px; }
 
-        /* Стили для системных сообщений Formspree AJAX */
-        [data-fs-success], [data-fs-error] { display: none; text-align: center; font-size: 15px; border-radius: 8px; max-width: 600px; margin: 20px auto; padding: 14px; }
-        [data-fs-success][data-fs-active] { display: block; background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
-        [data-fs-error=''][data-fs-active] { display: block; background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
-        [data-fs-error]:not([data-fs-error=''])[data-fs-active] { display: block; color: #dc3545; font-size: 12px; text-align: left; margin-top: 4px; }
-        [data-fs-field][aria-invalid="true"] { border-color: #dc3545 !important; background: rgba(220, 53, 69, 0.03) !important; }
+        /* Стиль для новой ссылки на оператора */
+        .operator-link { display: inline-flex; align-items: center; gap: 6px; color: #3b82f6; font-weight: 600; transition: color 0.3s; text-decoration: none; }
+        .operator-link:hover { color: #a855f7; }
+        .operator-svg { width: 16px; height: 16px; fill: currentColor; }
     </style>
 </head>
 <body>
-
-    <!-- Языки -->
     <div class="lang-bar">
         <div class="container">
             <button id="btn-uk" class="lang-btn active" onclick="setLanguage('uk')">УКР</button>
             <button id="btn-ru" class="lang-btn" onclick="setLanguage('ru')">РУС</button>
         </div>
     </div>
-
-    <!-- Шапка -->
     <header>
         <div class="container">
             <div class="logo">R. House</div>
@@ -64,37 +48,26 @@
             <a href="#contact" class="btn-contact" id="btn-discuss">Обговорити проєкт</a>
         </div>
     </header>
-
-    <!-- Основной контент -->
     <main class="main-content" id="dynamic-content">
-        
-        <!-- Главный экран -->
         <section class="hero" style="padding: 100px 0; background: radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.15), transparent 50%);">
             <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
-                
-                <!-- Левая часть: Текст -->
                 <div class="hero-text">
                     <h1 id="hero-title" style="font-size: 54px; font-weight: 800; line-height: 1.15; margin-bottom: 25px;">Ми створюємо сайти, які <span>розвивають ваш бізнес</span></h1>
-                    <p id="hero-desc" style="font-size: 18px; color: #9ca3af; margin-bottom: 40px;">Digital-агентство R. House — проєктування інтерфейсів, rozrobka складних вебсистем, інтернет-магазинів та корпоративних сайтів з упором на преміальний дизайн.</p>
-                    <a href="#contact" class="btn-contact" style="padding: 16px 40px; font-size: 18px;" id="btn-order">Замовити сайт</a>
-                </div>
-                
-                <!-- Правая часть: Наша анимированная неоновая сфера -->
-                <div class="hero-image" style="width: 100%; height: 380px; position: relative; border-radius: 16px; border: 1px solid rgba(168, 85, 247, 0.2); background: #07070c; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 0 50px rgba(59, 130, 246, 0.15); display: flex; align-items: center; justify-content: center;">
-                    <div style="position: absolute; width: 250px; height: 250px; background: radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, transparent 70%); filter: blur(20px); animation: pulseNeon 6s ease-in-out infinite alternate;"></div>
-                    <div style="position: absolute; width: 200px; height: 200px; background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, transparent 70%); filter: blur(30px); animation: pulseNeon 8s ease-in-out infinite alternate-reverse;"></div>
-                    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 20px 20px;"></div>
-                    <div style="z-index: 2; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px;">
-                        <div class="neon-sphere" style="width: 80px; height: 80px; border-radius: 50%; background: transparent; border: 2px dashed #3b82f6; box-shadow: 0 0 20px rgba(59, 130, 246, 0.6), inset 0 0 20px rgba(168, 85, 247, 0.6); position: relative; animation: rotateSphere 8s linear infinite;">
-                            <div style="position: absolute; inset: 15px; border-radius: 50%; background: linear-gradient(45deg, #a855f7, #3b82f6); opacity: 0.8; filter: blur(5px); animation: pulseCore 3s ease-in-out infinite alternate;"></div>
-                        </div>
-                        <div style="font-size: 14px; font-weight: 600; letter-spacing: 4px; color: #a855f7; text-shadow: 0 0 10px rgba(168, 85, 247, 0.6); text-transform: uppercase;">R. House Tech Node</div>
+                    <p id="hero-desc" style="font-size: 18px; color: #9ca3af; margin-bottom: 40px;">Digital-агентство R. House — проєктування інтерфейсів, розробка складних вебсистем, інтернет-магазинів та корпоративних сайтів з упором на преміальний дизайн.</p>
+                    
+                    <!-- Блок кнопок главного экрана с новой строчкой оператора -->
+                    <div style="display: flex; flex-direction: column; gap: 15px; align-items: flex-start;">
+                        <a href="#contact" class="btn-contact" style="padding: 16px 40px; font-size: 18px;" id="btn-order">Замовити сайт</a>
+                        <p id="operator-text" style="font-size: 15px; color: #9ca3af; margin-left: 5px;">
+                            Або <a href="https://t.me" target="_blank" class="operator-link"><svg class="operator-svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.07-1.02-.37-1.58-.74-.88-.58-1.38-.94-2.23-1.51-.99-.65-.35-1.01.22-1.65.15-.16 2.72-2.49 2.77-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.03-.27-.01-.12.02-1.95 1.23-5.51 3.63-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.4-.49 1.13-.75 4.41-1.92 7.35-3.19 8.83-3.81 4.21-1.78 5.08-2.09 5.65-2.1.13 0 .42.03.61.19.16.14.21.33.23.47-.01.07.01.22 0 .29z"/></svg>напишіть оператору в Телеграм</a>
+                        </p>
                     </div>
-                    <style>
-                        @keyframes rotateSphere { 0% { transform: rotate(0deg); } 50% { border-color: #a855f7; box-shadow: 0 0 30px rgba(168, 85, 247, 0.8), inset 0 0 20px rgba(59, 130, 246, 0.6); } 100% { transform: rotate(360deg); } }
-                        @keyframes pulseCore { 0% { transform: scale(0.8); opacity: 0.5; } 100% { transform: scale(1.1); opacity: 0.9; } }
-                        @keyframes pulseNeon { 0% { transform: scale(0.9) translate(-10px, -10px); opacity: 0.7; } 100% { transform: scale(1.2) translate(10px, 10px); opacity: 1; } }
-                    </style>
+                </div>
+                <div class="hero-image" style="width: 100%; height: 380px; position: relative; border-radius: 16px; border: 1px solid rgba(168, 85, 247, 0.2); background: #07070c; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                    <div style="position: absolute; width: 200px; height: 200px; background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, transparent 70%); filter: blur(30px);"></div>
+                    <div style="z-index: 2; text-align: center;">
+                        <div style="font-size: 14px; font-weight: 600; letter-spacing: 4px; color: #a855f7; text-transform: uppercase;">R. House Tech Node</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -135,17 +108,12 @@
                 <h2 id="form-title" style="font-size: 38px; font-weight: 800; margin-bottom: 10px;">Розпочнемо проєкт?</h2>
                 <p id="form-subtitle" style="color: #9ca3af; margin-bottom: 35px;">Залиште заявку, і наш аналітик зв'яжеться з вами протягом 15 хвилин для обговорення деталей.</p>
                 
-                <form action="https://formspree.io/f/xjywbwzr" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
-                    <div style="display: flex; flex-direction: column; gap: 15px;">
-                        <input type="text" name="name" id="input-name" placeholder="Ваше ім'я" required style="width: 100%; padding: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; color: #fff; font-size: 16px;" data-fs-field>
-                        <input type="email" name="email" id="input-email" placeholder="Ваш Email" required style="width: 100%; padding: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; color: #fff; font-size: 16px;" data-fs-field>
-                        <span data-fs-error="email"></span>
-                        
-                        <textarea name="message" id="input-msg" rows="5" placeholder="Розкажіть трохи про ваш проєкт..." required style="width: 100%; padding: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; color: #fff; font-size: 16px; resize: vertical;" data-fs-field></textarea>
-                        <span data-fs-error="message"></span>
-                        
-                        <button type="submit" id="btn-submit" class="btn-contact" style="width: 100%; padding: 16px;" data-fs-submit-btn>Надіслати заявку</button>
-                    </div>
+                <form action="https://formspree.io" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+                    <input type="text" name="name" id="input-name" placeholder="Ваше ім'я" required style="width: 100%; padding: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; color: #fff; font-size: 16px;">
+                    <input type="email" name="email" id="input-email" placeholder="Ваш Email" required style="width: 100%; padding: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; color: #fff; font-size: 16px;">
+                    <textarea name="message" id="input-msg" rows="5" placeholder="Розкажіть трохи про ваш проєкт..." required style="width: 100%; padding: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; color: #fff; font-size: 16px; resize: vertical;" data-fs-field></textarea>
+                    
+                    <button type="submit" id="btn-submit" class="btn-contact" style="width: 100%; padding: 16px;">Надіслати заявку</button>
                 </form>
             </div>
         </section>
@@ -164,11 +132,12 @@
                 heroTitle: "Ми створюємо сайти, які <span>розвивають ваш бізнес</span>",
                 heroDesc: "Digital-агентство R. House — проєктування інтерфейсів, розробка складних вебсистем, internet-магазинів та корпоративних сайтів з упором на преміальний дизайн.",
                 btnOrder: "Замовити сайт", servicesTitle: "Що ми вміємо робити чудово",
-                s1Title: "Корпоративні сайти", s1Desc: "Ексклюзивний дизайн, що підкреслює статус вашої компанії. Швидке завантаження та повна адаптивність під смартфони.",
+                s1Title: "Корпоративні сайти", s1Desc: "Ексклюзивний дизайн, що підкреслює статус вашої компанії. Швидке завантаження та повна адаптивність под смартфони.",
                 s2Title: "Інтернет-магазини", s2Desc: "Зручні каталоги, продумані кошики та інтеграція з платіжними системами для автоматизації ваших продажів.",
                 s3Title: "Landing Page", s3Desc: "Односторінкові сайти з високою конверсією, що б'ють точно в ціль і перетворюють відвідувачів на клієнтів.",
                 formTitle: "Розпочнемо проєкт?", formSubtitle: "Залиште заявку, і наш аналітик зв'яжеться з вами протягом 15 хвилин для обговорення деталей.",
-                inputName: "Ваше ім'я", inputEmail: "Ваш Email", inputMsg: "Розкажіть трохи про ваш проєкт...", btnSubmit: "Надіслати заявку"
+                inputName: "Ваше ім'я", inputEmail: "Ваш Email", inputMsg: "Розкажіть трохи про ваш проєкт...", btnSubmit: "Надіслати заявку",
+                operatorText: 'Або <a href="https://t.me" target="_blank" class="operator-link"><svg class="operator-svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.07-1.02-.37-1.58-.74-.88-.58-1.38-.94-2.23-1.51-.99-.65-.35-1.01.22-1.65.15-.16 2.72-2.49 2.77-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.03-.27-.01-.12.02-1.95 1.23-5.51 3.63-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.4-.49 1.13-.75 4.41-1.92 7.35-3.19 8.83-3.81 4.21-1.78 5.08-2.09 5.65-2.1.13 0 .42.03.61.19.16.14.21.33.23.47-.01.07.01.22 0 .29z"/></svg>напишіть оператору в Телеграм</a>'
             }, 
             ru: {
                 navServices: "Услуги", navContact: "Контакты", btnDiscuss: "Обсудить проект",
@@ -179,7 +148,8 @@
                 s2Title: "Интернет-магазины", s2Desc: "Удобные каталоги, продуманные корзины и интеграция с платежными системами для автоматизации ваших продаж.",
                 s3Title: "Landing Page", s3Desc: "Одностраничные сайты с высокой конверсией, бьющие точно в цель и превращающие посетителей в клиентов.",
                 formTitle: "Начнем проект?", formSubtitle: "Оставьте заявку, и наш аналитик свяжется с вами в течение 15 минут для обсуждения деталей.",
-                inputName: "Ваше имя", inputEmail: "Ваш Email", inputMsg: "Расскажите немного о вашем проекте...", btnSubmit: "Отправить заявку"
+                inputName: "Ваше имя", inputEmail: "Ваш Email", inputMsg: "Расскажите немного о вашем проекте...", btnSubmit: "Отправить заявку",
+                operatorText: 'Или <a href="https://t.me" target="_blank" class="operator-link"><svg class="operator-svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.07-1.02-.37-1.58-.74-.88-.58-1.38-.94-2.23-1.51-.99-.65-.35-1.01.22-1.65.15-.16 2.72-2.49 2.77-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.03-.27-.01-.12.02-1.95 1.23-5.51 3.63-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.4-.49 1.13-.75 4.41-1.92 7.35-3.19 8.83-3.81 4.21-1.78 5.08-2.09 5.65-2.1.13 0 .42.03.61.19.16.14.21.33.23.47-.01.07.01.22 0 .29z"/></svg>напишите оператору в Телеграм</a>'
             } 
         };
 
@@ -192,7 +162,8 @@
             document.getElementById('hero-title').innerHTML = window.translations[lang].heroTitle;
             document.getElementById('hero-desc').innerText = window.translations[lang].heroDesc;
             document.getElementById('btn-order').innerText = window.translations[lang].btnOrder;
-            document.getElementById('services-title').innerText = window.translations[lang].servicesTitle;
+            document.getElementById('operator-text').innerHTML = window.translations[lang].operatorText;
+document.getElementById('services-title').innerText = window.translations[lang].servicesTitle;
             document.getElementById('s1-title').innerText = window.translations[lang].s1Title;
             document.getElementById('s1-desc').innerText = window.translations[lang].s1Desc;
             document.getElementById('s2-title').innerText = window.translations[lang].s2Title;
@@ -212,12 +183,12 @@
             setLanguage('uk'); 
         });
 
-        // Официальный фоновый обработчик от Formspree
+        // Официальный фоновый обработчик AJAX от Formspree
         window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
         formspree('initForm', { formElement: '#contact-form', formId: 'xjywbwzr' });
     </script>
     
-    <!-- Подключение CDN-скрипта Formspree для "тихой" отправки -->
+    <!-- Подключение CDN-библиотеки Formspree для фоновой работы формы -->
     <script src="https://unpkg.com" defer></script>
 </body>
 </html>
