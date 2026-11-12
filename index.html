@@ -7,13 +7,14 @@
     <style>
         /* Главные стили премиальной 3D-темы */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
-         body { 
-            background: linear-gradient(180deg, rgba(7, 5, 16, 0.72) 0%, rgba(7, 5, 16, 0.88) 50%, rgba(7, 5, 16, 0.94) 100%), url('hero-bg.png') center center / cover no-repeat fixed; 
+                 body { 
+            background: url('hero-bg.png') center center / cover no-repeat fixed; 
             background-color: #070510; 
             color: #ffffff; 
             line-height: 1.6; 
             overflow-x: hidden; 
         }
+
         
                 /* Прозрачная верхняя панель переключения языков */
         .lang-bar { background: transparent; padding: 8px 0 4px; font-size: 13px; text-align: right; position: fixed; width: 100%; top: 0; z-index: 1001; }
@@ -85,8 +86,8 @@
         [data-fs-field][aria-invalid="true"] { border-color: #dc3545 !important; background: rgba(220, 53, 69, 0.03) !important; }
 
         /* Главный 3D экран с фоновой картинкой hero-bg.png */
-    
-        .hero-3d { position: relative; padding: 75px 0 45px; background: linear-gradient(90deg, rgba(7, 5, 16, 0.85) 0%, rgba(7, 5, 16, 0.35) 50%, transparent 100%); overflow: hidden; }
+
+        .hero-3d { position: relative; padding: 75px 0 45px; background: transparent; overflow: hidden; }
 
         .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; position: relative; z-index: 2; min-height: 410px; }
         
