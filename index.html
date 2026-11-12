@@ -122,6 +122,8 @@
         @media (max-width: 480px) {
             .features-strip { grid-template-columns: 1fr; }
         }
+        .service-card, .pricing-card { background: rgba(7, 5, 16, 0.82) !important; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(168, 85, 247, 0.3) !important; }
+        .service-card:hover, .pricing-card:hover { transform: translateY(-5px); border-color: #3b82f6 !important; background: rgba(15, 12, 32, 0.9) !important; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15); }
     </style>
 </head>
 <body>
@@ -315,9 +317,7 @@
                 </div>
             </div>
         </section>
-                .service-card, .pricing-card { background: rgba(7, 5, 16, 0.82) !important; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(168, 85, 247, 0.3) !important; }
-        .service-card:hover, .pricing-card:hover { transform: translateY(-5px); border-color: #3b82f6 !important; background: rgba(15, 12, 32, 0.9) !important; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15); }
-        </style>
+        
         <!-- Раздел Контакты -->
         <section id="contact" style="padding: 100px 0; background: #06060a; border-top: 1px solid rgba(255, 255, 255, 0.03);">
             <div class="container" style="max-width: 600px; margin: 0 auto; text-align: center;">
