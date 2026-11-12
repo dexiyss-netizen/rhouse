@@ -22,7 +22,7 @@
         .lang-btn.active { color: #c084fc; text-shadow: 0 0 12px rgba(192, 132, 252, 0.8); }
         
         /* Невесомая стеклянная шапка без черной полосы */
-        header { padding: 14px 0; position: fixed; width: 100%; top: 28px; background: rgba(7, 5, 16, 0.25); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.04); z-index: 1000; transition: background 0.3s ease; }
+                header { padding: 14px 0; position: fixed; width: 100%; top: 28px; background: transparent; border-bottom: none; z-index: 1000; }
         header .container { display: flex; justify-content: space-between; align-items: center; }
 
         /* 3D Логотип R. House */
@@ -233,9 +233,9 @@
             </div>
         </section>
         <style>
-                    .service-card { background: rgba(255, 255, 255, 0.06) !important; border: 1px solid rgba(168, 85, 247, 0.25) !important; }
-        .service-card:hover { transform: translateY(-5px); border-color: #3b82f6 !important; background: rgba(59, 130, 246, 0.08) !important; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1); }
-        </style>
+        .service-card, .pricing-card { background: rgba(7, 5, 16, 0.82) !important; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(168, 85, 247, 0.3) !important; }
+        .service-card:hover, .pricing-card:hover { transform: translateY(-5px); border-color: #3b82f6 !important; background: rgba(15, 12, 32, 0.9) !important; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15); }
+
 <!-- Раздел Цены (Тарифы) -->
         <section id="pricing" style="padding: 60px 0 100px; border-top: 1px solid rgba(255, 255, 255, 0.03);">
             <div class="container">
