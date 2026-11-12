@@ -62,7 +62,7 @@
         .hero-3d-desc { font-size: 16px; color: #e2e8f0; line-height: 1.6; padding-left: 18px; border-left: 3px solid #9333ea; margin-bottom: 36px; max-width: 520px; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7); }
         .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
 
-        /* Нижняя полоса из 4 преимуществ (в стиле Liquid Glass без рамок) */
+        /* Нижняя полоса из 4 преимуществ */
         .features-strip { 
             margin-top: 60px; 
             padding: 28px 0; 
@@ -77,29 +77,30 @@
             position: relative; 
             z-index: 5; 
         }
-        .feature-item { 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            gap: 16px; 
-            border-right: 1px solid rgba(255, 255, 255, 0.12); 
-            padding: 0 20px; 
-        }
+        .feature-item { display: flex; align-items: center; justify-content: center; gap: 16px; border-right: 1px solid rgba(255, 255, 255, 0.12); padding: 0 20px; }
         .feature-item:last-child { border-right: none; }
-        .feature-icon { 
-            width: 36px; 
-            height: 36px; 
-            min-width: 36px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            filter: drop-shadow(0 0 12px rgba(168, 85, 247, 0.65)); 
-        }
+        .feature-icon { width: 36px; height: 36px; min-width: 36px; display: flex; align-items: center; justify-content: center; filter: drop-shadow(0 0 12px rgba(168, 85, 247, 0.65)); }
         .feature-text { font-size: 15px; font-weight: 500; color: #f8fafc; line-height: 1.35; }
 
         /* Карточки услуг и тарифов */
         .service-card, .pricing-card { background: rgba(7, 5, 16, 0.82) !important; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(168, 85, 247, 0.3) !important; }
         .service-card:hover, .pricing-card:hover { transform: translateY(-5px); border-color: #3b82f6 !important; background: rgba(15, 12, 32, 0.9) !important; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15); }
+
+        /* 3D Спрайт-иконки услуг (из файла service-icons.png) */
+        .service-icon-sprite {
+            width: 84px;
+            height: 84px;
+            margin-bottom: 22px;
+            border-radius: 18px;
+            background-image: url('service-icons.png');
+            background-size: 315% auto;
+            background-repeat: no-repeat;
+            mix-blend-mode: lighten;
+            filter: drop-shadow(0 0 14px rgba(168, 85, 247, 0.5));
+        }
+        .icon-corp { background-position: 6% 48%; }
+        .icon-shop { background-position: 50% 48%; }
+        .icon-land { background-position: 94% 48%; }
 
         /* Мобильная адаптация для телефонов */
         @media (max-width: 900px) {
@@ -217,19 +218,19 @@
                 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
                     <div class="service-card" style="border-radius: 16px; padding: 40px 30px; transition: 0.3s;">
-                        <div style="font-size: 32px; margin-bottom: 20px;">💻</div>
+                        <div class="service-icon-sprite icon-corp"></div>
                         <h3 id="s1-title" style="font-size: 22px; font-weight: 700; margin-bottom: 12px;">Корпоративні сайти</h3>
                         <p id="s1-desc" style="color: #9ca3af; font-size: 15px;">Ексклюзивний дизайн, що підкреслює статус вашої компанії. Швидке завантаження та повна адаптивність під смартфони.</p>
                     </div>
 
                     <div class="service-card" style="border-radius: 16px; padding: 40px 30px; transition: 0.3s;">
-                        <div style="font-size: 32px; margin-bottom: 20px;">🛍️</div>
+                        <div class="service-icon-sprite icon-shop"></div>
                         <h3 id="s2-title" style="font-size: 22px; font-weight: 700; margin-bottom: 12px;">Інтернет-магазини</h3>
                         <p id="s2-desc" style="color: #9ca3af; font-size: 15px;">Зручні каталоги, продумані кошики та інтеграція з платіжними системами для автоматизації ваших продажів.</p>
                     </div>
 
                     <div class="service-card" style="border-radius: 16px; padding: 40px 30px; transition: 0.3s;">
-                        <div style="font-size: 32px; margin-bottom: 20px;">⚡</div>
+                        <div class="service-icon-sprite icon-land"></div>
                         <h3 id="s3-title" style="font-size: 22px; font-weight: 700; margin-bottom: 12px;">Landing Page</h3>
                         <p id="s3-desc" style="color: #9ca3af; font-size: 15px;">Односторінкові сайти з високою конверсією, що б'ють точно в ціль і перетворюють відвідувачів на клієнтів.</p>
                     </div>
@@ -243,7 +244,6 @@
                 <h2 id="pricing-title" style="text-align: center; font-size: 38px; font-weight: 800; margin-bottom: 60px; background: linear-gradient(180deg, #fff 0%, #9ca3af 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Вартість розробки</h2>
                 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; align-items: stretch;">
-                    <!-- Тариф 1 -->
                     <div class="pricing-card" style="border-radius: 16px; padding: 40px 30px; display: flex; flex-direction: column; text-align: center; transition: 0.3s;">
                         <h3 id="p1-title" style="font-size: 24px; font-weight: 700; margin-bottom: 6px;">Landing Page</h3>
                         <p id="p1-time" style="color: #9ca3af; font-size: 14px; margin-bottom: 25px;">Термін розробки: 4–7 днів</p>
@@ -261,7 +261,6 @@
                         <a href="#contact" class="btn-contact p-btn" style="width: 100%;">Замовити &gt;</a>
                     </div>
 
-                    <!-- Тариф 2 -->
                     <div class="pricing-card featured" style="background: rgba(15, 10, 35, 0.88) !important; border: 2px solid #a855f7 !important; border-radius: 16px; padding: 40px 30px; display: flex; flex-direction: column; text-align: center; box-shadow: 0 15px 40px rgba(168, 85, 247, 0.25); transition: 0.3s;">
                         <h3 id="p2-title" style="font-size: 24px; font-weight: 700; margin-bottom: 6px;">Корпоративний</h3>
                         <p id="p2-time" style="color: #c084fc; font-size: 14px; margin-bottom: 25px;">Термін розробки: 7–12 днів</p>
@@ -279,7 +278,6 @@
                         <a href="#contact" class="btn-contact p-btn" style="width: 100%;">Замовити &gt;</a>
                     </div>
 
-                    <!-- Тариф 3 -->
                     <div class="pricing-card" style="border-radius: 16px; padding: 40px 30px; display: flex; flex-direction: column; text-align: center; transition: 0.3s;">
                         <h3 id="p3-title" style="font-size: 24px; font-weight: 700; margin-bottom: 6px;">Інтернет-магазин</h3>
                         <p id="p3-time" style="color: #9ca3af; font-size: 14px; margin-bottom: 25px;">Термін розробки: 10–14 днів</p>
