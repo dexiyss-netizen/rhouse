@@ -5,39 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>R. House — Premium Web Development</title>
     <style>
-        /* Базовые стили */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
         html { scroll-behavior: smooth; }
         body { background-color: #070510; color: #ffffff; line-height: 1.6; overflow-x: hidden; }
         
-        /* Аппаратно зафиксированный фон без прыжков на телефонах */
-        .fixed-bg {
-            position: fixed;
-            inset: 0;
-            width: 100vw;
-            height: 100vh;
-            background: url('hero-bg.png') center center / cover no-repeat;
-            z-index: -1;
-            pointer-events: none;
-            transform: translate3d(0, 0, 0);
-            -webkit-transform: translate3d(0, 0, 0);
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-        }
+        .fixed-bg { position: fixed; inset: 0; width: 100vw; height: 100vh; background: url('hero-bg.png') center center / cover no-repeat; z-index: -1; pointer-events: none; transform: translate3d(0, 0, 0); -webkit-transform: translate3d(0, 0, 0); backface-visibility: hidden; -webkit-backface-visibility: hidden; }
         
         a { color: inherit; text-decoration: none; }
         .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
 
-        /* Панель переключения языков вверху страницы */
         .lang-bar { background: transparent; padding: 12px 0 4px; font-size: 13px; text-align: right; position: relative; width: 100%; z-index: 1001; }
         .lang-btn { background: none; border: none; color: #9ca3af; cursor: pointer; margin-left: 15px; font-weight: 600; transition: color 0.3s; }
         .lang-btn.active { color: #c084fc; text-shadow: 0 0 12px rgba(192, 132, 252, 0.8); }
         
-        /* Шапка вверху страницы */
         header { padding: 14px 0; position: relative; width: 100%; background: transparent; border-bottom: none; z-index: 1000; }
         header .container { display: flex; justify-content: space-between; align-items: center; }
 
-        /* Футуристичный логотип R. HOUSE DIGITAL AGENCY */
         .logo-wrap { display: inline-flex; align-items: center; transition: transform 0.3s ease, filter 0.3s ease; }
         .logo-wrap:hover { transform: translateY(-1px); filter: drop-shadow(0 0 16px rgba(168, 85, 247, 0.45)); }
         .logo-svg { width: 255px; height: auto; display: block; overflow: visible; }
@@ -46,52 +29,39 @@
         nav ul a { font-weight: 500; font-size: 15px; color: #e2e8f0; transition: 0.3s; }
         nav ul a:hover { color: #c084fc; text-shadow: 0 0 10px rgba(192, 132, 252, 0.5); }
         
-        /* Кнопка в шапке с неоновой рамкой */
         .btn-outline-neon { padding: 10px 24px; border-radius: 50px; font-weight: 600; font-size: 14px; color: #fff; background: rgba(147, 51, 234, 0.12); border: 1.5px solid #a855f7; box-shadow: 0 0 20px rgba(168, 85, 247, 0.35), inset 0 0 12px rgba(168, 85, 247, 0.2); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px; }
         .btn-outline-neon:hover { background: rgba(168, 85, 247, 0.3); box-shadow: 0 0 28px rgba(168, 85, 247, 0.65); transform: translateY(-1px); }
 
-        /* Основные кнопки */
         .btn-contact { background: linear-gradient(90deg, #9333ea, #6366f1); padding: 14px 32px; border-radius: 50px; font-weight: 600; box-shadow: 0 0 25px rgba(147, 51, 234, 0.45); transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; text-align: center; border: 1px solid rgba(255, 255, 255, 0.2); cursor: pointer; color: #fff; }
         .btn-contact:hover { transform: translateY(-2px); box-shadow: 0 0 35px rgba(147, 51, 234, 0.75); }
 
-        /* Стеклянная кнопка Telegram */
         .btn-glass-tg { padding: 14px 28px; border-radius: 50px; font-weight: 600; font-size: 16px; color: #fff; background: rgba(255, 255, 255, 0.06); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.18); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; gap: 10px; }
         .btn-glass-tg:hover { background: rgba(59, 130, 246, 0.18); border-color: #60a5fa; box-shadow: 0 0 25px rgba(59, 130, 246, 0.4); transform: translateY(-2px); }
 
         .main-content { padding-top: 10px; }
-
-        /* Главный 3D экран */
         .hero-3d { position: relative; padding: 50px 0 40px; background: transparent; overflow: hidden; }
         .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; position: relative; z-index: 2; min-height: 410px; }
-        
-        /* Заголовок с градиентом */
         .hero-3d-title { font-size: 56px; font-weight: 800; line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 24px; color: #ffffff; text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); }
         .hero-3d-title .accent-grad { background: linear-gradient(90deg, #c084fc, #a855f7, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
-        /* Описание с левой неоновой линией */
         .hero-3d-desc { font-size: 16px; color: #e2e8f0; line-height: 1.6; padding-left: 18px; border-left: 3px solid #9333ea; margin-bottom: 36px; max-width: 520px; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7); }
         .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
 
-        /* Нижняя полоса из 4 преимуществ */
         .features-strip { margin-top: 60px; padding: 28px 0; background: linear-gradient(180deg, rgba(7, 5, 16, 0.25) 0%, rgba(7, 5, 16, 0.75) 100%); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-top: 1px solid rgba(255, 255, 255, 0.06); border-bottom: 1px solid rgba(255, 255, 255, 0.04); display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative; z-index: 5; }
         .feature-item { display: flex; align-items: center; justify-content: center; gap: 16px; border-right: 1px solid rgba(255, 255, 255, 0.12); padding: 0 20px; }
         .feature-item:last-child { border-right: none; }
         .feature-icon { width: 36px; height: 36px; min-width: 36px; display: flex; align-items: center; justify-content: center; filter: drop-shadow(0 0 12px rgba(168, 85, 247, 0.65)); }
         .feature-text { font-size: 15px; font-weight: 500; color: #f8fafc; line-height: 1.35; }
 
-        /* Карточки услуг и тарифов */
         .service-card, .pricing-card { background: rgba(7, 5, 16, 0.82) !important; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(168, 85, 247, 0.3) !important; }
         .service-card { text-align: center; display: flex; flex-direction: column; align-items: center; }
         .service-card:hover, .pricing-card:hover { transform: translateY(-5px); border-color: #3b82f6 !important; background: rgba(15, 12, 32, 0.9) !important; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15); }
 
-        /* Крупные 3D-иконки услуг по центру */
         .service-icon-3d { width: 132px; height: 132px; margin: 0 auto 22px; border-radius: 20px; background-image: url('service-icons.png'); background-size: 315% 135%; background-repeat: no-repeat; mix-blend-mode: lighten; filter: drop-shadow(0 0 18px rgba(168, 85, 247, 0.45)); transition: transform 0.3s ease; }
         .service-card:hover .service-icon-3d { transform: scale(1.06); }
         .icon-corp { background-position: 6% 48%; }
         .icon-shop { background-position: 50% 50%; }
         .icon-land { background-position: 93% 48%; }
 
-        /* Мобильная адаптация для телефонов */
         @media (max-width: 900px) {
             header { padding: 12px 0; }
             header .container { flex-direction: column; gap: 10px; }
@@ -112,34 +82,12 @@
 </head>
 <body>
     <div class="fixed-bg"></div>
-
-
-            
-            /* Убираем пустое окно и тёмный квадрат вокруг преимуществ на телефоне */
-            .scene-3d { display: none !important; }
-            .features-strip { 
-                grid-template-columns: 1fr; 
-                gap: 16px; 
-                padding: 20px 10px; 
-                margin-top: 35px; 
-                background: transparent !important; 
-                backdrop-filter: none !important; 
-                -webkit-backdrop-filter: none !important; 
-                border: none !important; 
-            }
-            .feature-item { border-right: none; padding: 0; justify-content: center; text-align: left; }
-        }
-    </style>
-
-
-
     <div class="lang-bar">
         <div class="container">
             <button id="btn-uk" class="lang-btn active" onclick="setLanguage('uk')">УКР</button>
             <button id="btn-ru" class="lang-btn" onclick="setLanguage('ru')">РУС</button>
         </div>
     </div>
-
     <header>
         <div class="container">
             <a href="#" class="logo-wrap" aria-label="R. House Digital Agency">
