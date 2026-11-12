@@ -9,7 +9,17 @@
         html { scroll-behavior: smooth; }
         body { background-color: #070510; color: #ffffff; line-height: 1.6; overflow-x: hidden; }
         
-        .fixed-bg { position: fixed; inset: 0; width: 100vw; height: 100vh; background: url('hero-bg.png') center center / cover no-repeat; z-index: -1; pointer-events: none; transform: translate3d(0, 0, 0); -webkit-transform: translate3d(0, 0, 0); backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+                .fixed-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: url('hero-bg.png') center center / cover no-repeat;
+            z-index: -1;
+            pointer-events: none;
+        }
+
         
         a { color: inherit; text-decoration: none; }
         .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
@@ -389,7 +399,14 @@
             document.getElementById('btn-submit').innerText = t.btnSubmit;
         }
 
-        document.addEventListener('DOMContentLoaded', () => { setLanguage('uk'); });
+                document.addEventListener('DOMContentLoaded', () => {
+            setLanguage('uk');
+            const bg = document.querySelector('.fixed-bg');
+            if (bg) {
+                bg.style.height = Math.max(window.screen.height, window.innerHeight + 120) + 'px';
+            }
+        });
+
     </script>
 </body>
 </html>
