@@ -7,19 +7,19 @@
     <style>
         /* Базовые стили */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
-                 body { 
+        html { scroll-behavior: smooth; }
+        body { 
             background: url('hero-bg.png') center center / cover no-repeat fixed; 
             background-color: #070510; 
             color: #ffffff; 
             line-height: 1.6; 
             overflow-x: hidden; 
         }
-
-        
+        a { color: inherit; text-decoration: none; }
         .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
 
         /* Панель переключения языков вверху страницы */
-        .lang-bar { background: transparent; padding: 10px 0 4px; font-size: 13px; text-align: right; position: relative; width: 100%; z-index: 1001; }
+        .lang-bar { background: transparent; padding: 12px 0 4px; font-size: 13px; text-align: right; position: relative; width: 100%; z-index: 1001; }
         .lang-btn { background: none; border: none; color: #9ca3af; cursor: pointer; margin-left: 15px; font-weight: 600; transition: color 0.3s; }
         .lang-btn.active { color: #c084fc; text-shadow: 0 0 12px rgba(192, 132, 252, 0.8); }
         
@@ -27,8 +27,7 @@
         header { padding: 14px 0; position: relative; width: 100%; background: transparent; border-bottom: none; z-index: 1000; }
         header .container { display: flex; justify-content: space-between; align-items: center; }
 
-
-                /* 3D Логотип R. House без квадратной рамки */
+        /* 3D Логотип R. House без квадратной рамки */
         .logo-wrap { display: flex; align-items: center; gap: 10px; }
         .logo-3d-icon { font-weight: 900; font-size: 34px; line-height: 1; background: linear-gradient(135deg, #e9d5ff 0%, #a855f7 45%, #3b82f6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 12px rgba(168, 85, 247, 0.75)); transform: perspective(200px) rotateY(-12deg); }
         .logo { font-size: 24px; font-weight: 800; letter-spacing: 0.5px; color: #ffffff; }
@@ -41,19 +40,18 @@
         .btn-outline-neon { padding: 10px 24px; border-radius: 50px; font-weight: 600; font-size: 14px; color: #fff; background: rgba(147, 51, 234, 0.12); border: 1.5px solid #a855f7; box-shadow: 0 0 20px rgba(168, 85, 247, 0.35), inset 0 0 12px rgba(168, 85, 247, 0.2); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px; }
         .btn-outline-neon:hover { background: rgba(168, 85, 247, 0.3); box-shadow: 0 0 28px rgba(168, 85, 247, 0.65); transform: translateY(-1px); }
 
-        /* Основные кнопки для других блоков */
+        /* Основные кнопки */
         .btn-contact { background: linear-gradient(90deg, #9333ea, #6366f1); padding: 14px 32px; border-radius: 50px; font-weight: 600; box-shadow: 0 0 25px rgba(147, 51, 234, 0.45); transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; text-align: center; border: 1px solid rgba(255, 255, 255, 0.2); cursor: pointer; color: #fff; }
         .btn-contact:hover { transform: translateY(-2px); box-shadow: 0 0 35px rgba(147, 51, 234, 0.75); }
 
         /* Стеклянная кнопка Telegram */
-        .btn-glass-tg { padding: 14px 28px; border-radius: 50px; font-weight: 600; font-size: 16px; color: #fff; background: rgba(255, 255, 255, 0.06); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.18); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; gap: 10px; }
+        .btn-glass-tg { padding: 14px 28px; border-radius: 50px; font-weight: 600; font-size: 16px; color: #fff; background: rgba(255, 255, 255, 0.06); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.18); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; gap: 10px; }
         .btn-glass-tg:hover { background: rgba(59, 130, 246, 0.18); border-color: #60a5fa; box-shadow: 0 0 25px rgba(59, 130, 246, 0.4); transform: translateY(-2px); }
 
-        .main-content { padding-top: 105px; }
-        /* Главный 3D экран с фоновой картинкой hero-bg.png */
+        .main-content { padding-top: 10px; }
 
-        .hero-3d { position: relative; padding: 75px 0 45px; background: transparent; overflow: hidden; }
-
+        /* Главный 3D экран */
+        .hero-3d { position: relative; padding: 50px 0 40px; background: transparent; overflow: hidden; }
         .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; position: relative; z-index: 2; min-height: 410px; }
         
         /* Заголовок с градиентом */
@@ -62,12 +60,11 @@
         
         /* Описание с левой неоновой линией */
         .hero-3d-desc { font-size: 16px; color: #e2e8f0; line-height: 1.6; padding-left: 18px; border-left: 3px solid #9333ea; margin-bottom: 36px; max-width: 520px; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7); }
-        
         .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
 
         /* Нижняя полоса из 4 преимуществ (в стиле Liquid Glass без рамок) */
         .features-strip { 
-            margin-top: 70px; 
+            margin-top: 60px; 
             padding: 28px 0; 
             background: linear-gradient(180deg, rgba(7, 5, 16, 0.25) 0%, rgba(7, 5, 16, 0.75) 100%); 
             backdrop-filter: blur(8px); 
@@ -100,30 +97,30 @@
         }
         .feature-text { font-size: 15px; font-weight: 500; color: #f8fafc; line-height: 1.35; }
 
+        /* Карточки услуг и тарифов */
+        .service-card, .pricing-card { background: rgba(7, 5, 16, 0.82) !important; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(168, 85, 247, 0.3) !important; }
+        .service-card:hover, .pricing-card:hover { transform: translateY(-5px); border-color: #3b82f6 !important; background: rgba(15, 12, 32, 0.9) !important; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15); }
 
         /* Мобильная адаптация для телефонов */
         @media (max-width: 900px) {
-            header { padding: 12px 0; top: 32px; }
+            header { padding: 12px 0; }
             header .container { flex-direction: column; gap: 10px; }
             nav ul { gap: 20px; font-size: 14px; }
             #btn-discuss { display: none !important; }
-            .main-content { padding-top: 130px; }
-            .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 30px; }
+            .main-content { padding-top: 10px; }
+            .hero-3d { padding: 25px 0 30px; background: linear-gradient(180deg, rgba(7, 5, 16, 0.92) 0%, rgba(7, 5, 16, 0.72) 55%, rgba(7, 5, 16, 0.35) 100%), url('hero-bg.png') center bottom / cover no-repeat !important; }
+            .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 20px; }
             .hero-3d-title { font-size: 36px; }
             .hero-3d-desc { border-left: none; padding-left: 0; margin: 0 auto 28px; font-size: 15px; }
             .hero-actions { flex-direction: column; width: 100%; }
             .hero-actions a { width: 100%; }
-            .scene-3d { height: 320px; transform: scale(0.82); }
-            .features-strip { grid-template-columns: 1fr 1fr; gap: 16px; padding: 18px; }
-            .feature-item { border-right: none; padding-right: 0; }
-            .hero-3d { background: linear-gradient(180deg, rgba(7, 5, 16, 0.94) 0%, rgba(7, 5, 16, 0.75) 55%, rgba(7, 5, 16, 0.4) 100%), url('hero-bg.png') center bottom / cover no-repeat !important; }
-
+            .scene-3d { height: 220px !important; min-height: 220px !important; }
+            .features-strip { grid-template-columns: 1fr 1fr; gap: 16px; padding: 18px; margin-top: 30px; }
+            .feature-item { border-right: none; padding: 0; justify-content: flex-start; }
         }
         @media (max-width: 480px) {
             .features-strip { grid-template-columns: 1fr; }
         }
-        .service-card, .pricing-card { background: rgba(7, 5, 16, 0.82) !important; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(168, 85, 247, 0.3) !important; }
-        .service-card:hover, .pricing-card:hover { transform: translateY(-5px); border-color: #3b82f6 !important; background: rgba(15, 12, 32, 0.9) !important; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15); }
     </style>
 </head>
 <body>
@@ -156,24 +153,23 @@
         <section class="hero-3d">
             <div class="container">
                 <div class="hero-grid">
-                    
                     <div>
                         <h1 id="hero-title" class="hero-3d-title">Ми створюємо <span class="accent-grad">сайти, які</span> розвивають ваш бізнес</h1>
                         <p id="hero-desc" class="hero-3d-desc">Digital-агентство R. House — проєктування інтерфейсів, розробка складних вебсистем, інтернет-магазинів та корпоративних сайтів з упором на преміальний дизайн.</p>
                         
                         <div class="hero-actions">
                             <a href="#contact" class="btn-contact" id="btn-order" style="font-size: 16px; padding: 16px 34px;">Замовити сайт →</a>
-                            <a href="https://t.me" target="_blank" class="btn-glass-tg" id="btn-operator">
+                            <a href="https://t.me/zigyr19991" target="_blank" class="btn-glass-tg" id="btn-operator">
                                 <svg style="width: 24px; height: 24px; fill: #60a5fa;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.07-1.02-.37-1.58-.74-.88-.58-1.38-.94-2.23-1.51-.99-.65-.35-1.01.22-1.65.15-.16 2.72-2.49 2.77-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.03-.27-.01-.12.02-1.95 1.23-5.51 3.63-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.4-.49 1.13-.75 4.41-1.92 7.35-3.19 8.83-3.81 4.21-1.78 5.08-2.09 5.65-2.1.13 0 .42.03.61.19.16.14.21.33.23.47-.01.07.01.22 0 .29z"/></svg>
-                                Написати в Telegram
+                                <span id="tg-btn-text">Написати в Telegram</span>
                             </a>
                         </div>
                     </div>
 
-                                      <div class="scene-3d" style="min-height: 360px;"></div>
+                    <div class="scene-3d" style="min-height: 360px;"></div>
                 </div>
 
-                               <div class="features-strip">
+                <div class="features-strip">
                     <svg width="0" height="0" style="position: absolute;">
                         <defs>
                             <linearGradient id="neon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -187,62 +183,56 @@
                         <div class="feature-icon">
                             <svg style="width: 32px; height: 32px; stroke: url(#neon-grad); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                         </div>
-                        <div class="feature-text">Швидка розробка<br>та підтримка</div>
+                        <div class="feature-text" id="feat-1">Швидка розробка<br>та підтримка</div>
                     </div>
 
                     <div class="feature-item">
                         <div class="feature-icon">
                             <svg style="width: 32px; height: 32px; stroke: url(#neon-grad); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg>
                         </div>
-                        <div class="feature-text">Сучасний дизайн<br>і UX</div>
+                        <div class="feature-text" id="feat-2">Сучасний дизайн<br>і UX</div>
                     </div>
 
                     <div class="feature-item">
                         <div class="feature-icon">
                             <svg style="width: 32px; height: 32px; stroke: url(#neon-grad); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
                         </div>
-                        <div class="feature-text">Надійність<br>і безпека</div>
+                        <div class="feature-text" id="feat-3">Надійність<br>і безпека</div>
                     </div>
 
                     <div class="feature-item">
                         <div class="feature-icon">
                             <svg style="width: 32px; height: 32px; stroke: url(#neon-grad); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
                         </div>
-                        <div class="feature-text">Індивідуальний<br>підхід</div>
+                        <div class="feature-text" id="feat-4">Індивідуальний<br>підхід</div>
                     </div>
                 </div>
-
-
             </div>
-                </section>
+        </section>
+
         <!-- Раздел Услуги -->
         <section id="services" style="padding: 80px 0 60px;">
             <div class="container">
                 <h2 id="services-title" style="text-align: center; font-size: 38px; font-weight: 800; margin-bottom: 60px; background: linear-gradient(180deg, #fff 0%, #9ca3af 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Що ми вміємо робити чудово</h2>
                 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                    
-                    <!-- Услуга 1 -->
-                    <div class="service-card" style="background: rgba(7, 5, 16, 0.82); backdrop-filter: blur(12px); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 16px; padding: 40px 30px; transition: 0.3s;">
+                    <div class="service-card" style="border-radius: 16px; padding: 40px 30px; transition: 0.3s;">
                         <div style="font-size: 32px; margin-bottom: 20px;">💻</div>
                         <h3 id="s1-title" style="font-size: 22px; font-weight: 700; margin-bottom: 12px;">Корпоративні сайти</h3>
                         <p id="s1-desc" style="color: #9ca3af; font-size: 15px;">Ексклюзивний дизайн, що підкреслює статус вашої компанії. Швидке завантаження та повна адаптивність під смартфони.</p>
                     </div>
 
-                    <!-- Услуга 2 -->
-                    <div class="service-card" style="background: rgba(7, 5, 16, 0.82); backdrop-filter: blur(12px); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 16px; padding: 40px 30px; transition: 0.3s;">
+                    <div class="service-card" style="border-radius: 16px; padding: 40px 30px; transition: 0.3s;">
                         <div style="font-size: 32px; margin-bottom: 20px;">🛍️</div>
                         <h3 id="s2-title" style="font-size: 22px; font-weight: 700; margin-bottom: 12px;">Інтернет-магазини</h3>
                         <p id="s2-desc" style="color: #9ca3af; font-size: 15px;">Зручні каталоги, продумані кошики та інтеграція з платіжними системами для автоматизації ваших продажів.</p>
                     </div>
 
-                    <!-- Услуга 3 -->
-                    <div class="service-card" style="background: rgba(7, 5, 16, 0.82); backdrop-filter: blur(12px); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 16px; padding: 40px 30px; transition: 0.3s;">
+                    <div class="service-card" style="border-radius: 16px; padding: 40px 30px; transition: 0.3s;">
                         <div style="font-size: 32px; margin-bottom: 20px;">⚡</div>
                         <h3 id="s3-title" style="font-size: 22px; font-weight: 700; margin-bottom: 12px;">Landing Page</h3>
                         <p id="s3-desc" style="color: #9ca3af; font-size: 15px;">Односторінкові сайти з високою конверсією, що б'ють точно в ціль і перетворюють відвідувачів на клієнтів.</p>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -253,14 +243,12 @@
                 <h2 id="pricing-title" style="text-align: center; font-size: 38px; font-weight: 800; margin-bottom: 60px; background: linear-gradient(180deg, #fff 0%, #9ca3af 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Вартість розробки</h2>
                 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; align-items: stretch;">
-                    
-                    <!-- Тариф 1: Landing Page -->
-                    <div class="pricing-card" style="background: rgba(7, 5, 16, 0.82); backdrop-filter: blur(12px); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 16px; padding: 40px 30px; display: flex; flex-direction: column; text-align: center; transition: 0.3s;">
+                    <!-- Тариф 1 -->
+                    <div class="pricing-card" style="border-radius: 16px; padding: 40px 30px; display: flex; flex-direction: column; text-align: center; transition: 0.3s;">
                         <h3 id="p1-title" style="font-size: 24px; font-weight: 700; margin-bottom: 6px;">Landing Page</h3>
                         <p id="p1-time" style="color: #9ca3af; font-size: 14px; margin-bottom: 25px;">Термін розробки: 4–7 днів</p>
                         <div style="font-size: 42px; font-weight: 800; margin-bottom: 15px;"><span id="p-from-1" style="font-size: 16px; font-weight: 500; color: #9ca3af;">від</span> 100$</div>
                         <p id="p1-desc" style="color: #9ca3af; font-size: 14px; margin-bottom: 30px; min-height: 44px;">Простий односторінковий сайт, візитка, під рекламу</p>
-                        
                         <ul id="p1-list" style="list-style: none; text-align: left; margin-bottom: 35px; display: flex; flex-direction: column; gap: 12px; font-size: 15px; flex-grow: 1;">
                             <li><span style="color: #10b981; margin-right: 8px;">✔</span> Адаптивний дизайн</li>
                             <li><span style="color: #10b981; margin-right: 8px;">✔</span> SSL сертифікат</li>
@@ -270,17 +258,15 @@
                             <li style="color: #6b7280;"><span style="color: #ef4444; margin-right: 8px;">✖</span> Домен ~ 15$ на рік</li>
                             <li style="color: #6b7280;"><span style="color: #ef4444; margin-right: 8px;">✖</span> Сервер ~ 60$ на рік</li>
                         </ul>
-                        
                         <a href="#contact" class="btn-contact p-btn" style="width: 100%;">Замовити &gt;</a>
                     </div>
 
-                    <!-- Тариф 2: Корпоративний -->
-                    <div class="pricing-card featured" style="background: rgba(15, 10, 35, 0.88); backdrop-filter: blur(12px); border: 2px solid #a855f7; border-radius: 16px; padding: 40px 30px; display: flex; flex-direction: column; text-align: center; box-shadow: 0 15px 40px rgba(168, 85, 247, 0.25); transition: 0.3s;">
+                    <!-- Тариф 2 -->
+                    <div class="pricing-card featured" style="background: rgba(15, 10, 35, 0.88) !important; border: 2px solid #a855f7 !important; border-radius: 16px; padding: 40px 30px; display: flex; flex-direction: column; text-align: center; box-shadow: 0 15px 40px rgba(168, 85, 247, 0.25); transition: 0.3s;">
                         <h3 id="p2-title" style="font-size: 24px; font-weight: 700; margin-bottom: 6px;">Корпоративний</h3>
                         <p id="p2-time" style="color: #c084fc; font-size: 14px; margin-bottom: 25px;">Термін розробки: 7–12 днів</p>
                         <div style="font-size: 42px; font-weight: 800; margin-bottom: 15px;"><span id="p-from-2" style="font-size: 16px; font-weight: 500; color: #9ca3af;">від</span> 300$</div>
                         <p id="p2-desc" style="color: #d1d5db; font-size: 14px; margin-bottom: 30px; min-height: 44px;">Інформаційний сайт для організації, компанії</p>
-                        
                         <ul id="p2-list" style="list-style: none; text-align: left; margin-bottom: 35px; display: flex; flex-direction: column; gap: 12px; font-size: 15px; flex-grow: 1;">
                             <li><span style="color: #10b981; margin-right: 8px;">✔</span> Адаптивний дизайн</li>
                             <li><span style="color: #10b981; margin-right: 8px;">✔</span> SSL сертифікат</li>
@@ -290,17 +276,15 @@
                             <li style="color: #9ca3af;"><span style="color: #ef4444; margin-right: 8px;">✖</span> Домен ~ 15$ на рік</li>
                             <li style="color: #9ca3af;"><span style="color: #ef4444; margin-right: 8px;">✖</span> Сервер ~ 60$ на рік</li>
                         </ul>
-                        
                         <a href="#contact" class="btn-contact p-btn" style="width: 100%;">Замовити &gt;</a>
                     </div>
 
-                    <!-- Тариф 3: Інтернет-магазин -->
-                    <div class="pricing-card" style="background: rgba(7, 5, 16, 0.82); backdrop-filter: blur(12px); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 16px; padding: 40px 30px; display: flex; flex-direction: column; text-align: center; transition: 0.3s;">
+                    <!-- Тариф 3 -->
+                    <div class="pricing-card" style="border-radius: 16px; padding: 40px 30px; display: flex; flex-direction: column; text-align: center; transition: 0.3s;">
                         <h3 id="p3-title" style="font-size: 24px; font-weight: 700; margin-bottom: 6px;">Інтернет-магазин</h3>
                         <p id="p3-time" style="color: #9ca3af; font-size: 14px; margin-bottom: 25px;">Термін розробки: 10–14 днів</p>
                         <div style="font-size: 42px; font-weight: 800; margin-bottom: 15px;"><span id="p-from-3" style="font-size: 16px; font-weight: 500; color: #9ca3af;">від</span> 500$</div>
                         <p id="p3-desc" style="color: #9ca3af; font-size: 14px; margin-bottom: 30px; min-height: 44px;">Каталог, магазин, оформлення замовлення через кошик</p>
-                        
                         <ul id="p3-list" style="list-style: none; text-align: left; margin-bottom: 35px; display: flex; flex-direction: column; gap: 12px; font-size: 15px; flex-grow: 1;">
                             <li><span style="color: #10b981; margin-right: 8px;">✔</span> Адаптивний дизайн</li>
                             <li><span style="color: #10b981; margin-right: 8px;">✔</span> SSL сертифікат</li>
@@ -310,125 +294,111 @@
                             <li style="color: #6b7280;"><span style="color: #ef4444; margin-right: 8px;">✖</span> Домен ~ 15$ на рік</li>
                             <li style="color: #6b7280;"><span style="color: #ef4444; margin-right: 8px;">✖</span> Сервер ~ 60$ на рік</li>
                         </ul>
-                        
                         <a href="#contact" class="btn-contact p-btn" style="width: 100%;">Замовити &gt;</a>
                     </div>
-
                 </div>
             </div>
         </section>
         
         <!-- Раздел Контакты -->
-        <section id="contact" style="padding: 100px 0; background: #06060a; border-top: 1px solid rgba(255, 255, 255, 0.03);">
+        <section id="contact" style="padding: 80px 0 100px; background: rgba(7, 5, 16, 0.78); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid rgba(168, 85, 247, 0.2);">
             <div class="container" style="max-width: 600px; margin: 0 auto; text-align: center;">
                 <h2 id="form-title" style="font-size: 38px; font-weight: 800; margin-bottom: 10px;">Розпочнемо проєкт?</h2>
                 <p id="form-subtitle" style="color: #9ca3af; margin-bottom: 35px;">Залиште заявку, і наш аналітик зв'яжеться з вами протягом 15 хвилин для обговорення деталей.</p>  
                 <form action="https://formspree.io/f/xjywbwzr" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
-                    <div style="display: flex; flex-direction: column; gap: 15px;">
-                        <input type="text" name="name" id="input-name" placeholder="Ваше ім'я" required style="width: 100%; padding: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; color: #fff; font-size: 16px;">
-                        <input type="email" name="email" id="input-email" placeholder="Ваш Email" required style="width: 100%; padding: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; color: #fff; font-size: 16px;">
-                        <textarea name="message" id="input-msg" rows="5" placeholder="Розкажіть трохи про ваш проєкт..." required style="width: 100%; padding: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; color: #fff; font-size: 16px; resize: vertical;"></textarea>
-                        <button type="submit" id="btn-submit" class="btn-contact" style="width: 100%; padding: 16px;">Надіслати заявку</button>
-                    </div>
+                    <input type="text" name="name" id="input-name" placeholder="Ваше ім'я" required style="width: 100%; padding: 16px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 10px; color: #fff; font-size: 16px; outline: none;">
+                    <input type="email" name="email" id="input-email" placeholder="Ваш Email" required style="width: 100%; padding: 16px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 10px; color: #fff; font-size: 16px; outline: none;">
+                    <textarea name="message" id="input-msg" rows="5" placeholder="Розкажіть трохи про ваш проєкт..." required style="width: 100%; padding: 16px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 10px; color: #fff; font-size: 16px; resize: vertical; outline: none;"></textarea>
+                    <button type="submit" id="btn-submit" class="btn-contact" style="width: 100%; padding: 16px; font-size: 16px;">Надіслати заявку</button>
                 </form>
             </div>
         </section>
     </main>
-    <footer style="text-align: center; padding: 40px; color: #4b5563; font-size: 14px; border-top: 1px solid rgba(255, 255, 255, 0.02);">
+
+    <footer style="text-align: center; padding: 35px; background: rgba(5, 4, 12, 0.9); color: #6b7280; font-size: 14px; border-top: 1px solid rgba(255, 255, 255, 0.05);">
         <p>&copy; 2026 R. House Digital Agency. All rights reserved.</p>
     </footer>
+
     <!-- Скрипты мультиязычности -->
     <script>
-        window.translations = { 
+        const translations = { 
             uk: {
-                navServices: "Послуги", navContact: "Контакти", btnDiscuss: "Обговорити проєкт",
-                heroTitle: "Ми створюємо сайти, які <span class=\"accent-grad\">розвивають ваш бізнес</span>",
-                heroDesc: "Digital-агентство R. House — проєктування інтерфейсів, розробка складних вебсистем, internet-магазинів та корпоративних сайтів з упором на преміальний дизайн.",
-                btnOrder: "Замовити сайт", servicesTitle: "Що ми вміємо робити чудово",
+                navServices: "Послуги", navPricing: "Ціни", navContact: "Контакти", btnDiscuss: "Обговорити проєкт →",
+                heroTitle: 'Ми створюємо <span class="accent-grad">сайти, які</span> розвивають ваш бізнес',
+                heroDesc: "Digital-агентство R. House — проєктування інтерфейсів, розробка складних вебсистем, інтернет-магазинів та корпоративних сайтів з упором на преміальний дизайн.",
+                btnOrder: "Замовити сайт →", tgBtnText: "Написати в Telegram",
+                feat1: "Швидка розробка<br>та підтримка", feat2: "Сучасний дизайн<br>і UX", feat3: "Надійність<br>і безпека", feat4: "Індивідуальний<br>підхід",
+                servicesTitle: "Що ми вміємо робити чудово",
                 s1Title: "Корпоративні сайти", s1Desc: "Ексклюзивний дизайн, що підкреслює статус вашої компанії. Швидке завантаження та повна адаптивність під смартфони.",
                 s2Title: "Інтернет-магазини", s2Desc: "Зручні каталоги, продумані кошики та інтеграція з платіжними системами для автоматизації ваших продажів.",
                 s3Title: "Landing Page", s3Desc: "Односторінкові сайти з високою конверсією, що б'ють точно в ціль і перетворюють відвідувачів на клієнтів.",
-                formTitle: "Розпочнемо проєкт?", formSubtitle: "Залиште заявку, і наш аналітик зв'яжеться з вами протягом 15 хвилин для обговорення деталей.",
-                inputName: "Ваше ім'я", inputEmail: "Ваш Email", inputMsg: "Розкажіть трохи про ваш проєкт...", btnSubmit: "Надіслати заявку",
-                btnOperator: "Звернутись напряму до оператора"
-            }, 
-            ru: {
-                navServices: "Услуги", navContact: "Контакты", btnDiscuss: "Обсудить проект",
-                heroTitle: "Мы создаем сайты, которые <span class=\"accent-grad\">развивают ваш бизнес</span>",
-                heroDesc: "Digital-агентство R. House — проектирование интерфейсов, разработка сложных веб-систем, интернет-магазинов и корпоративных сайтов с упором на премиальный дизайн.",
-                btnOrder: "Заказать сайт", servicesTitle: "Что мы умеем делать превосходно",
-                s1Title: "Corporate Websites", s1Desc: "Эксклюзивный дизайн, подчеркивающий статус вашей компании. Быстрая загрузка и полная адаптивность под смартфоны.",
-                s2Title: "Интернет-магазины", s2Desc: "Удобные каталоги, продуманные корзины и интеграция с платежными системами для автоматизации ваших продаж.",
-                s3Title: "Landing Page", s3Desc: "Одностраничные сайты с высокой конверсией, бьющие точно в цель и превращающие посетителей в клиентов.",
-                formTitle: "Начнем проект?", formSubtitle: "Оставьте заявку, и наш аналитик свяжется с вами в течение 15 минут для обсуждения деталей.",
-                inputName: "Ваше имя", inputEmail: "Ваш Email", inputMsg: "Расскажите немного о вашем проекте...", btnSubmit: "Отправить заявку",
-                btnOperator: "Или написать в телеграм оператору"
-            } 
-        };
-        function setLanguage(lang) {
-            document.getElementById('btn-uk').classList.toggle('active', lang === 'uk');
-            document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
-            document.getElementById('nav-services').innerText = window.translations[lang].navServices;
-            document.getElementById('nav-contact').innerText = window.translations[lang].navContact;
-            document.getElementById('btn-discuss').innerText = window.translations[lang].btnDiscuss;
-            document.getElementById('hero-title').innerHTML = window.translations[lang].heroTitle;
-            document.getElementById('hero-desc').innerText = window.translations[lang].heroDesc;
-            document.getElementById('btn-order').innerText = window.translations[lang].btnOrder;
-            document.getElementById('services-title').innerText = window.translations[lang].servicesTitle;
-            document.getElementById('s1-title').innerText = window.translations[lang].s1Title;
-            document.getElementById('s1-desc').innerText = window.translations[lang].s1Desc;
-            document.getElementById('s2-title').innerText = window.translations[lang].s2Title;
-            document.getElementById('s2-desc').innerText = window.translations[lang].s2Desc;
-            document.getElementById('s3-title').innerText = window.translations[lang].s3Title;
-            document.getElementById('s3-desc').innerText = window.translations[lang].s3Desc;
-            document.getElementById('form-title').innerText = window.translations[lang].formTitle;
-            document.getElementById('form-subtitle').innerText = window.translations[lang].formSubtitle;
-            document.getElementById('input-name').placeholder = window.translations[lang].inputName;
-            document.getElementById('input-email').placeholder = window.translations[lang].inputEmail;
-            document.getElementById('input-msg').placeholder = window.translations[lang].inputMsg;
-            document.getElementById('btn-submit').innerText = window.translations[lang].btnSubmit;
-            // Проверка существования кнопки оператора перед переводом
-            const operatorBtn = document.getElementById('btn-operator');
-            if (operatorBtn) {
-                operatorBtn.innerHTML = window.translations[lang].btnOperator + ' <svg style="width: 40px; height: 40px; min-width: 40px; fill: currentColor;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.07-1.02-.37-1.58-.74-.88-.58-1.38-.94-2.23-1.51-.99-.65-.35-1.01.22-1.65.15-.16 2.72-2.49 2.77-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.03-.27-.01-.12.02-1.95 1.23-5.51 3.63-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.4-.49 1.13-.75 4.41-1.92 7.35-3.19 8.83-3.81 4.21-1.78 5.08-2.09 5.65-2.1.13 0 .42.03.61.19.16.14.21.33.23.47-.01.07.01.22 0 .29z"/></svg>';
-            }
-            updatePricing(lang);
-            window.currentLang = lang;
-        }
-        // Перевод блока цен
-        const pricingTranslations = {
-            uk: {
-                navPricing: "Ціни", pricingTitle: "Вартість розробки", from: "від", btn: "Замовити >",
+                pricingTitle: "Вартість розробки", from: "від", pBtn: "Замовити >",
                 p1Title: "Landing Page", p1Time: "Термін розробки: 4–7 днів", p1Desc: "Простий односторінковий сайт, візитка, під рекламу",
                 p1List: '<li><span style="color:#10b981;margin-right:8px;">✔</span> Адаптивний дизайн</li><li><span style="color:#10b981;margin-right:8px;">✔</span> SSL сертифікат</li><li><span style="color:#10b981;margin-right:8px;">✔</span> Контактна форма</li><li><span style="color:#10b981;margin-right:8px;">✔</span> Кнопки соцмереж</li><li><span style="color:#10b981;margin-right:8px;">✔</span> Будь-які доповнення</li><li style="color:#6b7280;"><span style="color:#ef4444;margin-right:8px;">✖</span> Домен ~ 15$ на рік</li><li style="color:#6b7280;"><span style="color:#ef4444;margin-right:8px;">✖</span> Сервер ~ 60$ на рік</li>',
                 p2Title: "Корпоративний", p2Time: "Термін розробки: 7–12 днів", p2Desc: "Інформаційний сайт для організації, компанії",
                 p2List: '<li><span style="color:#10b981;margin-right:8px;">✔</span> Адаптивний дизайн</li><li><span style="color:#10b981;margin-right:8px;">✔</span> SSL сертифікат</li><li><span style="color:#10b981;margin-right:8px;">✔</span> CMS редактор контенту</li><li><span style="color:#10b981;margin-right:8px;">✔</span> Декілька сторінок</li><li><span style="color:#10b981;margin-right:8px;">✔</span> Будь-які доповнення</li><li style="color:#9ca3af;"><span style="color:#ef4444;margin-right:8px;">✖</span> Домен ~ 15$ на рік</li><li style="color:#9ca3af;"><span style="color:#ef4444;margin-right:8px;">✖</span> Сервер ~ 60$ на рік</li>',
                 p3Title: "Інтернет-магазин", p3Time: "Термін розробки: 10–14 днів", p3Desc: "Каталог, магазин, оформлення замовлення через кошик",
-                p3List: '<li><span style="color:#10b981;margin-right:8px;">✔</span> Адаптивний дизайн</li><li><span style="color:#10b981;margin-right:8px;">✔</span> SSL сертифікат</li><li><span style="color:#10b981;margin-right:8px;">✔</span> CMS редактор контенту</li><li><span style="color:#10b981;margin-right:8px;">✔</span> Функціонал магазину</li><li><span style="color:#10b981;margin-right:8px;">✔</span> Будь-які доповнення</li><li style="color:#6b7280;"><span style="color:#ef4444;margin-right:8px;">✖</span> Домен ~ 15$ на рік</li><li style="color:#6b7280;"><span style="color:#ef4444;margin-right:8px;">✖</span> Сервер ~ 60$ на рік</li>'
-            },
+                p3List: '<li><span style="color:#10b981;margin-right:8px;">✔</span> Адаптивний дизайн</li><li><span style="color:#10b981;margin-right:8px;">✔</span> SSL сертифікат</li><li><span style="color:#10b981;margin-right:8px;">✔</span> CMS редактор контенту</li><li><span style="color:#10b981;margin-right:8px;">✔</span> Функціонал магазину</li><li><span style="color:#10b981;margin-right:8px;">✔</span> Будь-які доповнення</li><li style="color:#6b7280;"><span style="color:#ef4444;margin-right:8px;">✖</span> Домен ~ 15$ на рік</li><li style="color:#6b7280;"><span style="color:#ef4444;margin-right:8px;">✖</span> Сервер ~ 60$ на рік</li>',
+                formTitle: "Розпочнемо проєкт?", formSubtitle: "Залиште заявку, і наш аналітик зв'яжеться з вами протягом 15 хвилин для обговорення деталей.",
+                inputName: "Ваше ім'я", inputEmail: "Ваш Email", inputMsg: "Розкажіть трохи про ваш проєкт...", btnSubmit: "Надіслати заявку"
+            }, 
             ru: {
-                navPricing: "Цены", pricingTitle: "Стоимость разработки", from: "от", btn: "Заказать >",
+                navServices: "Услуги", navPricing: "Цены", navContact: "Контакты", btnDiscuss: "Обсудить проект →",
+                heroTitle: 'Мы создаем <span class="accent-grad">сайты, которые</span> развивают ваш бизнес',
+                heroDesc: "Digital-агентство R. House — проектирование интерфейсов, разработка сложных веб-систем, интернет-магазинов и корпоративных сайтов с упором на премиальный дизайн.",
+                btnOrder: "Заказать сайт →", tgBtnText: "Написать в Telegram",
+                feat1: "Быстрая разработка<br>и поддержка", feat2: "Современный дизайн<br>и UX", feat3: "Надежность<br>и безопасность", feat4: "Индивидуальный<br>подход",
+                servicesTitle: "Что мы умеем делать превосходно",
+                s1Title: "Корпоративные сайты", s1Desc: "Эксклюзивный дизайн, подчеркивающий статус вашей компании. Быстрая загрузка и полная адаптивность под смартфоны.",
+                s2Title: "Интернет-магазины", s2Desc: "Удобные каталоги, продуманные корзины и интеграция с платежными системами для автоматизации ваших продаж.",
+                s3Title: "Landing Page", s3Desc: "Одностраничные сайты с высокой конверсией, бьющие точно в цель и превращающие посетителей в клиентов.",
+                pricingTitle: "Стоимость разработки", from: "от", pBtn: "Заказать >",
                 p1Title: "Landing Page", p1Time: "Срок разработки: 4–7 дней", p1Desc: "Простой одностраничный сайт, визитка, под рекламу",
                 p1List: '<li><span style="color:#10b981;margin-right:8px;">✔</span> Адаптивный дизайн</li><li><span style="color:#10b981;margin-right:8px;">✔</span> SSL сертификат</li><li><span style="color:#10b981;margin-right:8px;">✔</span> Контактная форма</li><li><span style="color:#10b981;margin-right:8px;">✔</span> Кнопки соцсетей</li><li><span style="color:#10b981;margin-right:8px;">✔</span> Любые дополнения</li><li style="color:#6b7280;"><span style="color:#ef4444;margin-right:8px;">✖</span> Домен ~ 15$ в год</li><li style="color:#6b7280;"><span style="color:#ef4444;margin-right:8px;">✖</span> Сервер ~ 60$ в год</li>',
                 p2Title: "Корпоративный", p2Time: "Срок разработки: 7–12 дней", p2Desc: "Информационный сайт для организации, компании",
                 p2List: '<li><span style="color:#10b981;margin-right:8px;">✔</span> Адаптивный дизайн</li><li><span style="color:#10b981;margin-right:8px;">✔</span> SSL сертификат</li><li><span style="color:#10b981;margin-right:8px;">✔</span> CMS редактор контента</li><li><span style="color:#10b981;margin-right:8px;">✔</span> Несколько страниц</li><li><span style="color:#10b981;margin-right:8px;">✔</span> Любые дополнения</li><li style="color:#9ca3af;"><span style="color:#ef4444;margin-right:8px;">✖</span> Домен ~ 15$ в год</li><li style="color:#9ca3af;"><span style="color:#ef4444;margin-right:8px;">✖</span> Сервер ~ 60$ в год</li>',
                 p3Title: "Интернет-магазин", p3Time: "Срок разработки: 10–14 дней", p3Desc: "Каталог, магазин, оформление заказа через корзину",
-                p3List: '<li><span style="color:#10b981;margin-right:8px;">✔</span> Адаптивный дизайн</li><li><span style="color:#10b981;margin-right:8px;">✔</span> SSL сертификат</li><li><span style="color:#10b981;margin-right:8px;">✔</span> CMS редактор контента</li><li><span style="color:#10b981;margin-right:8px;">✔</span> Функционал магазина</li><li><span style="color:#10b981;margin-right:8px;">✔</span> Любые дополнения</li><li style="color:#6b7280;"><span style="color:#ef4444;margin-right:8px;">✖</span> Домен ~ 15$ в год</li><li style="color:#6b7280;"><span style="color:#ef4444;margin-right:8px;">✖</span> Сервер ~ 60$ в год</li>'
-            }
+                p3List: '<li><span style="color:#10b981;margin-right:8px;">✔</span> Адаптивный дизайн</li><li><span style="color:#10b981;margin-right:8px;">✔</span> SSL сертификат</li><li><span style="color:#10b981;margin-right:8px;">✔</span> CMS редактор контента</li><li><span style="color:#10b981;margin-right:8px;">✔</span> Функционал магазина</li><li><span style="color:#10b981;margin-right:8px;">✔</span> Любые дополнения</li><li style="color:#6b7280;"><span style="color:#ef4444;margin-right:8px;">✖</span> Домен ~ 15$ в год</li><li style="color:#6b7280;"><span style="color:#ef4444;margin-right:8px;">✖</span> Сервер ~ 60$ в год</li>',
+                formTitle: "Начнем проект?", formSubtitle: "Оставьте заявку, и наш аналитик свяжется с вами в течение 15 минут для обсуждения деталей.",
+                inputName: "Ваше имя", inputEmail: "Ваш Email", inputMsg: "Расскажите немного о вашем проекте...", btnSubmit: "Отправить заявку"
+            } 
         };
-        function updatePricing(lang) {
-            const t = pricingTranslations[lang];
-            if (document.getElementById('nav-pricing')) document.getElementById('nav-pricing').innerText = t.navPricing;
+
+        function setLanguage(lang) {
+            const t = translations[lang];
+            document.getElementById('btn-uk').classList.toggle('active', lang === 'uk');
+            document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
+            document.getElementById('nav-services').innerText = t.navServices;
+            document.getElementById('nav-pricing').innerText = t.navPricing;
+            document.getElementById('nav-contact').innerText = t.navContact;
+            document.getElementById('btn-discuss').innerText = t.btnDiscuss;
+            document.getElementById('hero-title').innerHTML = t.heroTitle;
+            document.getElementById('hero-desc').innerText = t.heroDesc;
+            document.getElementById('btn-order').innerText = t.btnOrder;
+            document.getElementById('tg-btn-text').innerText = t.tgBtnText;
+            document.getElementById('feat-1').innerHTML = t.feat1;
+            document.getElementById('feat-2').innerHTML = t.feat2;
+            document.getElementById('feat-3').innerHTML = t.feat3;
+            document.getElementById('feat-4').innerHTML = t.feat4;
+            document.getElementById('services-title').innerText = t.servicesTitle;
+            document.getElementById('s1-title').innerText = t.s1Title; document.getElementById('s1-desc').innerText = t.s1Desc;
+            document.getElementById('s2-title').innerText = t.s2Title; document.getElementById('s2-desc').innerText = t.s2Desc;
+            document.getElementById('s3-title').innerText = t.s3Title; document.getElementById('s3-desc').innerText = t.s3Desc;
             document.getElementById('pricing-title').innerText = t.pricingTitle;
             ['p-from-1', 'p-from-2', 'p-from-3'].forEach(id => document.getElementById(id).innerText = t.from);
-            document.querySelectorAll('.p-btn').forEach(btn => btn.innerText = t.btn);
+            document.querySelectorAll('.p-btn').forEach(btn => btn.innerText = t.pBtn);
             document.getElementById('p1-title').innerText = t.p1Title; document.getElementById('p1-time').innerText = t.p1Time; document.getElementById('p1-desc').innerText = t.p1Desc; document.getElementById('p1-list').innerHTML = t.p1List;
             document.getElementById('p2-title').innerText = t.p2Title; document.getElementById('p2-time').innerText = t.p2Time; document.getElementById('p2-desc').innerText = t.p2Desc; document.getElementById('p2-list').innerHTML = t.p2List;
             document.getElementById('p3-title').innerText = t.p3Title; document.getElementById('p3-time').innerText = t.p3Time; document.getElementById('p3-desc').innerText = t.p3Desc; document.getElementById('p3-list').innerHTML = t.p3List;
+            document.getElementById('form-title').innerText = t.formTitle;
+            document.getElementById('form-subtitle').innerText = t.formSubtitle;
+            document.getElementById('input-name').placeholder = t.inputName;
+            document.getElementById('input-email').placeholder = t.inputEmail;
+            document.getElementById('input-msg').placeholder = t.inputMsg;
+            document.getElementById('btn-submit').innerText = t.btnSubmit;
         }
-        document.addEventListener('DOMContentLoaded', () => { 
-            setLanguage('uk'); 
-        });
-</script>
+
+        document.addEventListener('DOMContentLoaded', () => { setLanguage('uk'); });
+    </script>
 </body>
 </html>
