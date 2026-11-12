@@ -23,14 +23,14 @@
         .lang-btn { background: none; border: none; color: #9ca3af; cursor: pointer; margin-left: 15px; font-weight: 600; transition: color 0.3s; }
         .lang-btn.active { color: #c084fc; text-shadow: 0 0 12px rgba(192, 132, 252, 0.8); }
         
-        /* Шапка вверху страницы (не ездит при прокрутке) */
+        /* Шапка вверху страницы */
         header { padding: 14px 0; position: relative; width: 100%; background: transparent; border-bottom: none; z-index: 1000; }
         header .container { display: flex; justify-content: space-between; align-items: center; }
 
-        /* 3D Логотип R. House без квадратной рамки */
-        .logo-wrap { display: flex; align-items: center; gap: 10px; }
-        .logo-3d-icon { font-weight: 900; font-size: 34px; line-height: 1; background: linear-gradient(135deg, #e9d5ff 0%, #a855f7 45%, #3b82f6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 12px rgba(168, 85, 247, 0.75)); transform: perspective(200px) rotateY(-12deg); }
-        .logo { font-size: 24px; font-weight: 800; letter-spacing: 0.5px; color: #ffffff; }
+        /* Футуристичный логотип R. HOUSE DIGITAL AGENCY */
+        .logo-wrap { display: inline-flex; align-items: center; transition: transform 0.3s ease, filter 0.3s ease; }
+        .logo-wrap:hover { transform: translateY(-1px); filter: drop-shadow(0 0 16px rgba(168, 85, 247, 0.45)); }
+        .logo-svg { width: 255px; height: auto; display: block; overflow: visible; }
         
         nav ul { display: flex; list-style: none; gap: 36px; }
         nav ul a { font-weight: 500; font-size: 15px; color: #e2e8f0; transition: 0.3s; }
@@ -62,7 +62,7 @@
         .hero-3d-desc { font-size: 16px; color: #e2e8f0; line-height: 1.6; padding-left: 18px; border-left: 3px solid #9333ea; margin-bottom: 36px; max-width: 520px; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7); }
         .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
 
-        /* Нижняя полоса из 4 преимуществ (в стиле Liquid Glass без рамок) */
+        /* Нижняя полоса из 4 преимуществ */
         .features-strip { 
             margin-top: 60px; 
             padding: 28px 0; 
@@ -97,30 +97,34 @@
         }
         .feature-text { font-size: 15px; font-weight: 500; color: #f8fafc; line-height: 1.35; }
 
-        /* 3D-иконки услуг (увеличены в 1.5 раза и выровнены по центру) */
-        .service-icon-box {
-            width: 132px;
-            height: 132px;
-            margin: 0 auto 24px;
-            border-radius: 20px;
-            background-image: url('service-icons.png');
-            background-repeat: no-repeat;
-            background-size: 318% auto;
-            mix-blend-mode: lighten;
-            filter: drop-shadow(0 0 18px rgba(168, 85, 247, 0.55));
-        }
-        .icon-corp { background-position: 6% 50%; }
-        .icon-shop { background-position: 49% 50%; }
-        .icon-land { background-position: 93% 50%; }
-
         /* Карточки услуг и тарифов */
         .service-card, .pricing-card { background: rgba(7, 5, 16, 0.82) !important; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(168, 85, 247, 0.3) !important; }
+        .service-card { text-align: center; display: flex; flex-direction: column; align-items: center; }
         .service-card:hover, .pricing-card:hover { transform: translateY(-5px); border-color: #3b82f6 !important; background: rgba(15, 12, 32, 0.9) !important; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15); }
+
+        /* Крупные 3D-иконки услуг по центру */
+        .service-icon-3d {
+            width: 132px;
+            height: 132px;
+            margin: 0 auto 22px;
+            border-radius: 20px;
+            background-image: url('service-icons.png');
+            background-size: 315% 135%;
+            background-repeat: no-repeat;
+            mix-blend-mode: lighten;
+            filter: drop-shadow(0 0 18px rgba(168, 85, 247, 0.45));
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover .service-icon-3d { transform: scale(1.06); }
+        .icon-corp { background-position: 6% 48%; }
+        .icon-shop { background-position: 50% 50%; }
+        .icon-land { background-position: 93% 48%; }
 
         /* Мобильная адаптация для телефонов */
         @media (max-width: 900px) {
             header { padding: 12px 0; }
-            header .container { flex-direction: column; gap: 10px; }
+            header .container { flex-direction: column; gap: 14px; }
+            .logo-svg { width: 230px; }
             nav ul { gap: 20px; font-size: 14px; }
             #btn-discuss { display: none !important; }
             .main-content { padding-top: 10px; }
@@ -150,9 +154,47 @@
 
     <header>
         <div class="container">
-            <a href="#" class="logo-wrap">
-                <div class="logo-3d-icon">R</div>
-                <div class="logo">R. House</div>
+            <a href="#" class="logo-wrap" aria-label="R. House Digital Agency">
+                <svg class="logo-svg" viewBox="0 0 360 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <radialGradient id="logoDotGrad" cx="35%" cy="30%" r="70%">
+                            <stop offset="0%" stop-color="#7dd3fc"/>
+                            <stop offset="50%" stop-color="#818cf8"/>
+                            <stop offset="100%" stop-color="#a855f7"/>
+                        </radialGradient>
+                        <filter id="dotGlow" x="-60%" y="-60%" width="220%" height="220%">
+                            <feGaussianBlur stdDeviation="4.5" result="blur"/>
+                            <feMerge>
+                                <feMergeNode in="blur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+
+                    <!-- R (футуристичный разрез по левой стойке) -->
+                    <path d="M4 8H33C42.5 8 48 13 48 20.5C48 26.8 43.8 31.2 36.5 32.5L49 46H38.5L27.2 33.2H12.5V26.2H31.8C36.6 26.2 39.2 24 39.2 20.5C39.2 17 36.6 14.8 31.8 14.8H4V8ZM4 31.5H12.5V46H4V31.5Z" fill="#FFFFFF"/>
+
+                    <!-- Светящаяся градиентная точка -->
+                    <circle cx="62" cy="39" r="7" fill="url(#logoDotGrad)" filter="url(#dotGlow)"/>
+
+                    <!-- H -->
+                    <path d="M84 8H92.5V23.2H118.5V8H127V46H118.5V30.2H92.5V46H84V8Z" fill="#FFFFFF"/>
+
+                    <!-- O -->
+                    <path d="M162.5 7.5C176.8 7.5 186.5 15.8 186.5 27C186.5 38.2 176.8 46.5 162.5 46.5C148.2 46.5 138.5 38.2 138.5 27C138.5 15.8 148.2 7.5 162.5 7.5ZM162.5 14.5C153 14.5 147.2 19.7 147.2 27C147.2 34.3 153 39.5 162.5 39.5C172 39.5 177.8 34.3 177.8 27C177.8 19.7 172 14.5 162.5 14.5Z" fill="#FFFFFF"/>
+
+                    <!-- U -->
+                    <path d="M198 8H206.5V29.5C206.5 36.2 211.2 39.5 218.5 39.5C225.8 39.5 230.5 36.2 230.5 29.5V8H239V29.8C239 40.5 231.2 46.5 218.5 46.5C205.8 46.5 198 40.5 198 29.8V8Z" fill="#FFFFFF"/>
+
+                    <!-- S -->
+                    <path d="M251 35.5H260C260.6 38.5 264.5 40 271.5 40C278.2 40 281.8 38.2 281.8 35.2C281.8 32.4 279 31.1 270.5 30.1L264.5 29.4C255.2 28.3 251.2 24.4 251.2 18.5C251.2 11.6 258.2 7.5 270.2 7.5C282.2 7.5 288.8 11.5 289.5 18.2H280.6C280 15.4 276.6 14 270.2 14C263.8 14 260 15.6 260 18.4C260 21.1 262.8 22.3 271.2 23.3L277.2 24C286.8 25.1 290.6 28.9 290.6 35C290.6 42.2 283.4 46.5 271.2 46.5C258.5 46.5 251.6 42.4 251 35.5Z" fill="#FFFFFF"/>
+
+                    <!-- E (футуристичный разрез) -->
+                    <path d="M303 8H341V14.8H303V8ZM303 23.5H336V30.2H311.5V39.2H341V46H303V23.5Z" fill="#FFFFFF"/>
+
+                    <!-- Подзаголовок DIGITAL AGENCY -->
+                    <text x="5" y="69" fill="#E2E8F0" font-family="'Segoe UI', system-ui, sans-serif" font-size="13.5" font-weight="600" letter-spacing="10.4">DIGITAL AGENCY</text>
+                </svg>
             </a>
             <nav>
                 <ul>
@@ -226,25 +268,26 @@
             </div>
         </section>
 
+        <!-- Раздел Услуги -->
         <section id="services" style="padding: 80px 0 60px;">
             <div class="container">
                 <h2 id="services-title" style="text-align: center; font-size: 38px; font-weight: 800; margin-bottom: 60px; background: linear-gradient(180deg, #fff 0%, #9ca3af 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Що ми вміємо робити чудово</h2>
                 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                    <div class="service-card" style="border-radius: 16px; padding: 40px 30px; transition: 0.3s; text-align: center;">
-                        <div class="service-icon-box icon-corp"></div>
+                    <div class="service-card" style="border-radius: 16px; padding: 40px 30px; transition: 0.3s;">
+                        <div class="service-icon-3d icon-corp"></div>
                         <h3 id="s1-title" style="font-size: 22px; font-weight: 700; margin-bottom: 12px;">Корпоративні сайти</h3>
                         <p id="s1-desc" style="color: #9ca3af; font-size: 15px;">Ексклюзивний дизайн, що підкреслює статус вашої компанії. Швидке завантаження та повна адаптивність під смартфони.</p>
                     </div>
 
-                    <div class="service-card" style="border-radius: 16px; padding: 40px 30px; transition: 0.3s; text-align: center;">
-                        <div class="service-icon-box icon-shop"></div>
+                    <div class="service-card" style="border-radius: 16px; padding: 40px 30px; transition: 0.3s;">
+                        <div class="service-icon-3d icon-shop"></div>
                         <h3 id="s2-title" style="font-size: 22px; font-weight: 700; margin-bottom: 12px;">Інтернет-магазини</h3>
                         <p id="s2-desc" style="color: #9ca3af; font-size: 15px;">Зручні каталоги, продумані кошики та інтеграція з платіжними системами для автоматизації ваших продажів.</p>
                     </div>
 
-                    <div class="service-card" style="border-radius: 16px; padding: 40px 30px; transition: 0.3s; text-align: center;">
-                        <div class="service-icon-box icon-land"></div>
+                    <div class="service-card" style="border-radius: 16px; padding: 40px 30px; transition: 0.3s;">
+                        <div class="service-icon-3d icon-land"></div>
                         <h3 id="s3-title" style="font-size: 22px; font-weight: 700; margin-bottom: 12px;">Landing Page</h3>
                         <p id="s3-desc" style="color: #9ca3af; font-size: 15px;">Односторінкові сайти з високою конверсією, що б'ють точно в ціль і перетворюють відвідувачів на клієнтів.</p>
                     </div>
@@ -258,7 +301,6 @@
                 <h2 id="pricing-title" style="text-align: center; font-size: 38px; font-weight: 800; margin-bottom: 60px; background: linear-gradient(180deg, #fff 0%, #9ca3af 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Вартість розробки</h2>
                 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; align-items: stretch;">
-                    <!-- Тариф 1 -->
                     <div class="pricing-card" style="border-radius: 16px; padding: 40px 30px; display: flex; flex-direction: column; text-align: center; transition: 0.3s;">
                         <h3 id="p1-title" style="font-size: 24px; font-weight: 700; margin-bottom: 6px;">Landing Page</h3>
                         <p id="p1-time" style="color: #9ca3af; font-size: 14px; margin-bottom: 25px;">Термін розробки: 4–7 днів</p>
@@ -276,7 +318,6 @@
                         <a href="#contact" class="btn-contact p-btn" style="width: 100%;">Замовити &gt;</a>
                     </div>
 
-                    <!-- Тариф 2 -->
                     <div class="pricing-card featured" style="background: rgba(15, 10, 35, 0.88) !important; border: 2px solid #a855f7 !important; border-radius: 16px; padding: 40px 30px; display: flex; flex-direction: column; text-align: center; box-shadow: 0 15px 40px rgba(168, 85, 247, 0.25); transition: 0.3s;">
                         <h3 id="p2-title" style="font-size: 24px; font-weight: 700; margin-bottom: 6px;">Корпоративний</h3>
                         <p id="p2-time" style="color: #c084fc; font-size: 14px; margin-bottom: 25px;">Термін розробки: 7–12 днів</p>
@@ -294,7 +335,6 @@
                         <a href="#contact" class="btn-contact p-btn" style="width: 100%;">Замовити &gt;</a>
                     </div>
 
-                    <!-- Тариф 3 -->
                     <div class="pricing-card" style="border-radius: 16px; padding: 40px 30px; display: flex; flex-direction: column; text-align: center; transition: 0.3s;">
                         <h3 id="p3-title" style="font-size: 24px; font-weight: 700; margin-bottom: 6px;">Інтернет-магазин</h3>
                         <p id="p3-time" style="color: #9ca3af; font-size: 14px; margin-bottom: 25px;">Термін розробки: 10–14 днів</p>
