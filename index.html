@@ -35,9 +35,13 @@
         .logo-wrap:hover { transform: translateY(-1px); filter: drop-shadow(0 0 16px rgba(168, 85, 247, 0.45)); }
                 .logo-svg { width: 330px; height: auto; display: block; overflow: visible; max-width: 90vw; }
 
-        nav ul { display: flex; list-style: none; gap: 36px; }
-        nav ul a { font-weight: 500; font-size: 15px; color: #e2e8f0; transition: 0.3s; }
-        nav ul a:hover { color: #c084fc; text-shadow: 0 0 10px rgba(192, 132, 252, 0.5); }
+                /* Увеличенное меню со светящимися сине-фиолетовыми линиями */
+        nav ul { display: flex; list-style: none; gap: 44px; }
+        nav ul a { position: relative; font-weight: 600; font-size: 18px; letter-spacing: 0.4px; color: #ffffff; padding-bottom: 10px; transition: all 0.3s ease; }
+        nav ul a::after { content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 3.5px; border-radius: 4px; background: linear-gradient(90deg, #60a5fa, #a855f7); box-shadow: 0 0 12px rgba(168, 85, 247, 0.75); transition: all 0.3s ease; opacity: 0.85; }
+        nav ul a:hover { color: #e9d5ff; text-shadow: 0 0 14px rgba(192, 132, 252, 0.7); }
+        nav ul a:hover::after { height: 4px; box-shadow: 0 0 18px rgba(96, 165, 250, 0.95), 0 0 24px rgba(168, 85, 247, 0.9); opacity: 1; }
+
         
         .btn-outline-neon { padding: 10px 24px; border-radius: 50px; font-weight: 600; font-size: 14px; color: #fff; background: rgba(147, 51, 234, 0.12); border: 1.5px solid #a855f7; box-shadow: 0 0 20px rgba(168, 85, 247, 0.35), inset 0 0 12px rgba(168, 85, 247, 0.2); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px; }
         .btn-outline-neon:hover { background: rgba(168, 85, 247, 0.3); box-shadow: 0 0 28px rgba(168, 85, 247, 0.65); transform: translateY(-1px); }
@@ -75,7 +79,9 @@
         @media (max-width: 900px) {
             header { padding: 12px 0; }
             header .container { flex-direction: column; gap: 10px; }
-            nav ul { gap: 20px; font-size: 14px; }
+                       nav ul { gap: 24px; }
+            nav ul a { font-size: 16px; padding-bottom: 8px; }
+
             #btn-discuss { display: none !important; }
             .main-content { padding-top: 10px; }
             .hero-3d { padding: 25px 0 30px; background: transparent !important; }
