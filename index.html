@@ -10,29 +10,22 @@
         body { background-color: #0b0b12; color: #ffffff; line-height: 1.6; overflow-x: hidden; }
         a { color: inherit; text-decoration: none; }
         .container { width: 90%; max-width: 1200px; margin: 0 auto; }
-
         /* Верхняя панель переключения языков */
         .lang-bar { background: #06060a; border-bottom: 1px solid rgba(255, 255, 255, 0.03); padding: 8px 0; font-size: 13px; text-align: right; position: fixed; width: 100%; top: 0; z-index: 1001; }
         .lang-btn { background: none; border: none; color: #6b7280; cursor: pointer; margin-left: 15px; font-weight: 600; transition: color 0.3s; }
         .lang-btn.active { color: #a855f7; text-shadow: 0 0 10px rgba(168, 85, 247, 0.5); }
-
         /* Шапка под языковой панелью */
         header { padding: 20px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); position: fixed; width: 100%; top: 35px; background: rgba(11, 11, 18, 0.85); backdrop-filter: blur(10px); z-index: 1000; }
         header .container { display: flex; justify-content: space-between; align-items: center; }
-        
         /* Логотип R. House с анимацией свечения */
         .logo { font-size: 26px; font-weight: 900; letter-spacing: 1.5px; background: linear-gradient(45deg, #fff, #a855f7, #3b82f6); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 4s linear infinite; }
         @keyframes shine { to { background-position: 200% center; } }
-
         nav ul { display: flex; list-: none; gap: 30px; }
         nav ul a { font-weight: 500; transition: 0.3s; }
         nav ul a:hover { color: #a855f7; }
-
         .btn-contact { background: linear-gradient(45deg, #a855f7, #3b82f6); padding: 12px 24px; border-radius: 6px; font-weight: 600; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2); transition: all 0.3s ease; display: inline-block; text-align: center; border: none; cursor: pointer; color: #fff; }
         .btn-contact:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4); }
-
         .main-content { padding-top: 120px; }
-
         /* Стили для системных сообщений Formspree AJAX */
         [data-fs-success], [data-fs-error] { display: none; text-align: center; font-size: 15px; border-radius: 8px; max-width: 600px; margin: 20px auto; padding: 14px; }
         [data-fs-success][data-fs-active] { display: block; background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
@@ -45,14 +38,11 @@
             header { padding: 12px 0; top: 35px; }
             header .container { flex-direction: column; gap: 8px; text-align: center; }
             nav ul { gap: 15px; margin: 5px 0; font-size: 14px; }
-            
             /* Скрываем лишнюю кнопку и увеличиваем логотип */
             #btn-discuss { display: none !important; }
             .logo { font-size: 36px !important; }
             .main-content { padding-top: 145px !important; }
-            
             .btn-contact { padding: 16px 20px !important; font-size: 16px !important; width: 100% !important; display: inline-flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; box-sizing: border-box !important; }
-            
         /* Мобильная адаптация для телефонов */
         @media (max-width: 768px) {
             .container { width: 92%; }
@@ -60,16 +50,13 @@
             header .container { flex-direction: column; gap: 10px; text-align: center; }
             nav ul { gap: 15px; margin: 5px 0; font-size: 14px; }
             .btn-contact { padding: 16px 20px !important; font-size: 16px !important; width: 100% !important; display: inline-flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; box-sizing: border-box !important; }
-            .main-content { padding-top: 190px; }
-            
+            .main-content { padding-top: 190px; }      
             /* Полное принудительное центрирование контента */
             .hero .container { grid-template-columns: 1fr !important; gap: 30px !important; text-align: center !important; display: flex !important; flex-direction: column !important; align-items: center !important; }
             .hero-text { display: flex !important; flex-direction: column !important; align-items: center !important; text-align: center !important; width: 100% !important; }
             .hero-text div { display: flex !important; flex-direction: column !important; align-items: center !important; width: 100% !important; max-width: 100% !important; margin: 0 auto !important; }
-            
             #hero-title { font-size: 32px !important; line-height: 1.2 !important; text-align: center !important; }
             #hero-desc { font-size: 15px !important; margin-bottom: 25px !important; text-align: center !important; }
-            
             .hero-image { position: absolute !important; inset: 0 !important; height: 100% !important; opacity: 0.25 !important; z-index: -1 !important; pointer-events: none !important; }
             .logo { font-size: 38px !important; }
             #btn-operator svg { width: 40px !important; height: 40px !important; min-width: 40px !important; }
@@ -82,7 +69,6 @@
     </style>
 </head>
 <body>
-
     <!-- Языки -->
     <div class="lang-bar">
         <div class="container">
@@ -90,7 +76,6 @@
             <button id="btn-ru" class="lang-btn" onclick="setLanguage('ru')">РУС</button>
         </div>
     </div>
-
     <!-- Шапка -->
     <header>
         <div class="container">
@@ -105,26 +90,21 @@
             <a href="#contact" class="btn-contact" id="btn-discuss">Обговорити проєкт</a>
         </div>
     </header>
-
     <!-- Основной контент -->
     <main class="main-content" id="dynamic-content">
-        
         <!-- Главный экран -->
         <section class="hero" style="padding: 100px 0; background: radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.15), transparent 50%);">
-            <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
-                
+            <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">  
                                <!-- Левая часть: Текст и центрированные кнопки -->
                 <div class="hero-text">
                     <h1 id="hero-title" style="font-size: 54px; font-weight: 800; line-height: 1.15; margin-bottom: 25px;">Ми створюємо сайти, які <span>розвивають ваш бізнес</span></h1>
                     <p id="hero-desc" style="font-size: 18px; color: #9ca3af; margin-bottom: 40px;">Digital-агентство R. House — проєктування інтерфейсів, rozrobka складних вебсистем, інтернет-магазинів та корпоративних сайтів з упором на преміальний дизайн.</p>
-                    
                     <!-- Чистый адаптивный контейнер кнопок -->
                     <div style="display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 400px;">
                         <a href="#contact" class="btn-contact" style="padding: 16px 40px; font-size: 18px; display: block; text-align: center;" id="btn-order">Замовити сайт</a>
                         <a href="https://t.me/zigyr19991" target="_blank" class="btn-contact" style="padding: 16px 40px; font-size: 18px; display: inline-flex; align-items: center; justify-content: center; gap: 12px;" id="btn-operator">Або написати в телеграм оператору <svg style="width: 40px; height: 40px; min-width: 40px; fill: currentColor;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.07-1.02-.37-1.58-.74-.88-.58-1.38-.94-2.23-1.51-.99-.65-.35-1.01.22-1.65.15-.16 2.72-2.49 2.77-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.03-.27-.01-.12.02-1.95 1.23-5.51 3.63-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.4-.49 1.13-.75 4.41-1.92 7.35-3.19 8.83-3.81 4.21-1.78 5.08-2.09 5.65-2.1.13 0 .42.03.61.19.16.14.21.33.23.47-.01.07.01.22 0 .29z"/></svg></a>
 </div>
                 </div>
-                
                 <!-- Правая часть: Наша анимированная неоновая сфера -->
                 <div class="hero-image" style="width: 100%; height: 380px; position: relative; border-radius: 16px; border: 1px solid rgba(168, 85, 247, 0.2); background: #07070c; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 0 50px rgba(59, 130, 246, 0.15); display: flex; align-items: center; justify-content: center;">
                     <div style="position: absolute; width: 250px; height: 250px; background: radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, transparent 70%); filter: blur(20px); animation: pulseNeon 6s ease-in-out infinite alternate;"></div>
@@ -170,22 +150,18 @@
         <style>
                     .service-card { background: rgba(255, 255, 255, 0.06) !important; border: 1px solid rgba(168, 85, 247, 0.25) !important; }
         .service-card:hover { transform: translateY(-5px); border-color: #3b82f6 !important; background: rgba(59, 130, 246, 0.08) !important; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1); }
-
         </style>
 <!-- Раздел Цены (Тарифы) -->
         <section id="pricing" style="padding: 60px 0 100px; border-top: 1px solid rgba(255, 255, 255, 0.03);">
             <div class="container">
                 <h2 id="pricing-title" style="text-align: center; font-size: 38px; font-weight: 800; margin-bottom: 60px; background: linear-gradient(180deg, #fff 0%, #9ca3af 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Вартість розробки</h2>
-                
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; align-items: stretch;">
-                    
                     <!-- Тариф 1: Landing Page -->
                     <div class="pricing-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 40px 30px; display: flex; flex-direction: column; text-align: center; transition: 0.3s;">
                         <h3 id="p1-title" style="font-size: 24px; font-weight: 700; margin-bottom: 6px;">Landing Page</h3>
                         <p id="p1-time" style="color: #9ca3af; font-size: 14px; margin-bottom: 25px;">Термін розробки: 4–7 днів</p>
                         <div style="font-size: 42px; font-weight: 800; margin-bottom: 15px;"><span id="p-from-1" style="font-size: 16px; font-weight: 500; color: #9ca3af;">від</span> 100$</div>
                         <p id="p1-desc" style="color: #9ca3af; font-size: 14px; margin-bottom: 30px; min-height: 44px;">Простий односторінковий сайт, візитка, під рекламу</p>
-                        
                         <ul id="p1-list" style="list-style: none; text-align: left; margin-bottom: 35px; display: flex; flex-direction: column; gap: 12px; font-size: 15px; flex-grow: 1;">
                             <li><span style="color: #10b981; margin-right: 8px;">✔</span> Адаптивний дизайн</li>
                             <li><span style="color: #10b981; margin-right: 8px;">✔</span> SSL сертифікат</li>
@@ -195,17 +171,14 @@
                             <li style="color: #6b7280;"><span style="color: #ef4444; margin-right: 8px;">✖</span> Домен ~ 15$ на рік</li>
                             <li style="color: #6b7280;"><span style="color: #ef4444; margin-right: 8px;">✖</span> Сервер ~ 60$ на рік</li>
                         </ul>
-                        
                         <a href="#contact" class="btn-contact p-btn" style="width: 100%; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(168, 85, 247, 0.4);">Замовити &gt;</a>
                     </div>
-
                     <!-- Тариф 2: Корпоративний (Выделенный) -->
                     <div class="pricing-card featured" style="background: linear-gradient(180deg, rgba(168, 85, 247, 0.14) 0%, rgba(59, 130, 246, 0.06) 100%); border: 2px solid #a855f7; border-radius: 16px; padding: 40px 30px; display: flex; flex-direction: column; text-align: center; box-shadow: 0 15px 40px rgba(168, 85, 247, 0.2); transition: 0.3s;">
                         <h3 id="p2-title" style="font-size: 24px; font-weight: 700; margin-bottom: 6px;">Корпоративний</h3>
                         <p id="p2-time" style="color: #c084fc; font-size: 14px; margin-bottom: 25px;">Термін розробки: 7–12 днів</p>
                         <div style="font-size: 42px; font-weight: 800; margin-bottom: 15px;"><span id="p-from-2" style="font-size: 16px; font-weight: 500; color: #9ca3af;">від</span> 300$</div>
                         <p id="p2-desc" style="color: #d1d5db; font-size: 14px; margin-bottom: 30px; min-height: 44px;">Інформаційний сайт для організації, компанії</p>
-                        
                         <ul id="p2-list" style="list-style: none; text-align: left; margin-bottom: 35px; display: flex; flex-direction: column; gap: 12px; font-size: 15px; flex-grow: 1;">
                             <li><span style="color: #10b981; margin-right: 8px;">✔</span> Адаптивний дизайн</li>
                             <li><span style="color: #10b981; margin-right: 8px;">✔</span> SSL сертифікат</li>
@@ -214,18 +187,15 @@
                             <li><span style="color: #10b981; margin-right: 8px;">✔</span> Будь-які доповнення</li>
                             <li style="color: #9ca3af;"><span style="color: #ef4444; margin-right: 8px;">✖</span> Домен ~ 15$ на рік</li>
                             <li style="color: #9ca3af;"><span style="color: #ef4444; margin-right: 8px;">✖</span> Сервер ~ 60$ на рік</li>
-                        </ul>
-                        
+                        </ul> 
                         <a href="#contact" class="btn-contact p-btn" style="width: 100%;">Замовити &gt;</a>
                     </div>
-
                     <!-- Тариф 3: Інтернет-магазин -->
                     <div class="pricing-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 40px 30px; display: flex; flex-direction: column; text-align: center; transition: 0.3s;">
                         <h3 id="p3-title" style="font-size: 24px; font-weight: 700; margin-bottom: 6px;">Інтернет-магазин</h3>
                         <p id="p3-time" style="color: #9ca3af; font-size: 14px; margin-bottom: 25px;">Термін розробки: 10–14 днів</p>
                         <div style="font-size: 42px; font-weight: 800; margin-bottom: 15px;"><span id="p-from-3" style="font-size: 16px; font-weight: 500; color: #9ca3af;">від</span> 500$</div>
                         <p id="p3-desc" style="color: #9ca3af; font-size: 14px; margin-bottom: 30px; min-height: 44px;">Каталог, магазин, оформлення замовлення через кошик</p>
-                        
                         <ul id="p3-list" style="list-style: none; text-align: left; margin-bottom: 35px; display: flex; flex-direction: column; gap: 12px; font-size: 15px; flex-grow: 1;">
                             <li><span style="color: #10b981; margin-right: 8px;">✔</span> Адаптивний дизайн</li>
                             <li><span style="color: #10b981; margin-right: 8px;">✔</span> SSL сертифікат</li>
@@ -235,44 +205,35 @@
                             <li style="color: #6b7280;"><span style="color: #ef4444; margin-right: 8px;">✖</span> Домен ~ 15$ на рік</li>
                             <li style="color: #6b7280;"><span style="color: #ef4444; margin-right: 8px;">✖</span> Сервер ~ 60$ на рік</li>
                         </ul>
-                        
                         <a href="#contact" class="btn-contact p-btn" style="width: 100%; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(168, 85, 247, 0.4);">Замовити &gt;</a>
                     </div>
-
                 </div>
             </div>
         </section>
         <!-- Системные плашки для уведомлений AJAX -->
         <div data-fs-success></div>
         <div data-fs-error></div>
-
         <!-- Раздел Контакты -->
         <section id="contact" style="padding: 100px 0; background: #06060a; border-top: 1px solid rgba(255, 255, 255, 0.03);">
             <div class="container" style="max-width: 600px; margin: 0 auto; text-align: center;">
                 <h2 id="form-title" style="font-size: 38px; font-weight: 800; margin-bottom: 10px;">Розпочнемо проєкт?</h2>
-                <p id="form-subtitle" style="color: #9ca3af; margin-bottom: 35px;">Залиште заявку, і наш аналітик зв'яжеться з вами протягом 15 хвилин для обговорення деталей.</p>
-                
+                <p id="form-subtitle" style="color: #9ca3af; margin-bottom: 35px;">Залиште заявку, і наш аналітик зв'яжеться з вами протягом 15 хвилин для обговорення деталей.</p>  
                 <form action="https://formspree.io/f/xjywbwzr" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
                     <div style="display: flex; flex-direction: column; gap: 15px;">
                         <input type="text" name="name" id="input-name" placeholder="Ваше ім'я" required style="width: 100%; padding: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; color: #fff; font-size: 16px;" data-fs-field>
                         <input type="email" name="email" id="input-email" placeholder="Ваш Email" required style="width: 100%; padding: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; color: #fff; font-size: 16px;" data-fs-field>
                         <span data-fs-error="email"></span>
-                        
                         <textarea name="message" id="input-msg" rows="5" placeholder="Розкажіть трохи про ваш проєкт..." required style="width: 100%; padding: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; color: #fff; font-size: 16px; resize: vertical;" data-fs-field></textarea>
                         <span data-fs-error="message"></span>
-                        
                         <button type="submit" id="btn-submit" class="btn-contact" style="width: 100%; padding: 16px;" data-fs-submit-btn>Надіслати заявку</button>
                     </div>
                 </form>
             </div>
         </section>
-
     </main>
-
     <footer style="text-align: center; padding: 40px; color: #4b5563; font-size: 14px; border-top: 1px solid rgba(255, 255, 255, 0.02);">
         <p>&copy; 2026 R. House Digital Agency. All rights reserved.</p>
     </footer>
-
     <!-- Скрипты мультиязычности -->
     <script>
         window.translations = { 
@@ -301,7 +262,6 @@
                 btnOperator: "Или написать в телеграм оператору"
             } 
         };
-
         function setLanguage(lang) {
             document.getElementById('btn-uk').classList.toggle('active', lang === 'uk');
             document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
@@ -324,14 +284,11 @@
             document.getElementById('input-email').placeholder = window.translations[lang].inputEmail;
             document.getElementById('input-msg').placeholder = window.translations[lang].inputMsg;
             document.getElementById('btn-submit').innerText = window.translations[lang].btnSubmit;
-            
             // Проверка существования кнопки оператора перед переводом
             const operatorBtn = document.getElementById('btn-operator');
             if (operatorBtn) {
                 operatorBtn.innerHTML = window.translations[lang].btnOperator + ' <svg style="width: 40px; height: 40px; min-width: 40px; fill: currentColor;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.07-1.02-.37-1.58-.74-.88-.58-1.38-.94-2.23-1.51-.99-.65-.35-1.01.22-1.65.15-.16 2.72-2.49 2.77-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.03-.27-.01-.12.02-1.95 1.23-5.51 3.63-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.4-.49 1.13-.75 4.41-1.92 7.35-3.19 8.83-3.81 4.21-1.78 5.08-2.09 5.65-2.1.13 0 .42.03.61.19.16.14.21.33.23.47-.01.07.01.22 0 .29z"/></svg>';
-
             }
-
             window.currentLang = lang;
         }
         // Перевод блока цен
@@ -355,7 +312,6 @@
                 p3List: '<li><span style="color:#10b981;margin-right:8px;">✔</span> Адаптивный дизайн</li><li><span style="color:#10b981;margin-right:8px;">✔</span> SSL сертификат</li><li><span style="color:#10b981;margin-right:8px;">✔</span> CMS редактор контента</li><li><span style="color:#10b981;margin-right:8px;">✔</span> Функционал магазина</li><li><span style="color:#10b981;margin-right:8px;">✔</span> Любые дополнения</li><li style="color:#6b7280;"><span style="color:#ef4444;margin-right:8px;">✖</span> Домен ~ 15$ в год</li><li style="color:#6b7280;"><span style="color:#ef4444;margin-right:8px;">✖</span> Сервер ~ 60$ в год</li>'
             }
         };
-
         const origSetLanguage = setLanguage;
         setLanguage = function(lang) {
             origSetLanguage(lang);
@@ -368,16 +324,13 @@
             document.getElementById('p2-title').innerText = t.p2Title; document.getElementById('p2-time').innerText = t.p2Time; document.getElementById('p2-desc').innerText = t.p2Desc; document.getElementById('p2-list').innerHTML = t.p2List;
             document.getElementById('p3-title').innerText = t.p3Title; document.getElementById('p3-time').innerText = t.p3Time; document.getElementById('p3-desc').innerText = t.p3Desc; document.getElementById('p3-list').innerHTML = t.p3List;
         };
-
         document.addEventListener('DOMContentLoaded', () => { 
             setLanguage('uk'); 
         });
-
         // Официальный фоновый обработчик от Formspree
         window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
         formspree('initForm', { formElement: '#contact-form', formId: 'xjywbwzr' });
-    </script>
-    
+    </script>    
     <!-- Подключение CDN-скрипта Formspree для "тихой" отправки -->
     <script src="https://unpkg.com" defer></script>
 </body>
