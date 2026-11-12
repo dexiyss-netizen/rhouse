@@ -16,14 +16,15 @@
         }
 
         
-                /* Прозрачная верхняя панель переключения языков */
-        .lang-bar { background: transparent; padding: 8px 0 4px; font-size: 13px; text-align: right; position: fixed; width: 100%; top: 0; z-index: 1001; }
+                        /* Панель переключения языков вверху страницы */
+        .lang-bar { background: transparent; padding: 10px 0 4px; font-size: 13px; text-align: right; position: relative; width: 100%; z-index: 1001; }
         .lang-btn { background: none; border: none; color: #9ca3af; cursor: pointer; margin-left: 15px; font-weight: 600; transition: color 0.3s; }
         .lang-btn.active { color: #c084fc; text-shadow: 0 0 12px rgba(192, 132, 252, 0.8); }
         
-        /* Невесомая стеклянная шапка без черной полосы */
-                header { padding: 14px 0; position: fixed; width: 100%; top: 28px; background: transparent; border-bottom: none; z-index: 1000; }
+        /* Шапка вверху страницы (не ездит при прокрутке) */
+        header { padding: 14px 0; position: relative; width: 100%; background: transparent; border-bottom: none; z-index: 1000; }
         header .container { display: flex; justify-content: space-between; align-items: center; }
+
 
         /* 3D Логотип R. House */
         .logo-wrap { display: flex; align-items: center; gap: 12px; }
@@ -46,7 +47,8 @@
         .btn-glass-tg { padding: 14px 28px; border-radius: 50px; font-weight: 600; font-size: 16px; color: #fff; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.15); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; gap: 10px; }
         .btn-glass-tg:hover { background: rgba(59, 130, 246, 0.18); border-color: #60a5fa; box-shadow: 0 0 25px rgba(59, 130, 246, 0.4); transform: translateY(-2px); }
 
-        .main-content { padding-top: 105px; }
+                .main-content { padding-top: 10px; }
+
 
         /* Стили для системных сообщений Formspree AJAX */
         [data-fs-success], [data-fs-error] { display: none; text-align: center; font-size: 15px; border-radius: 8px; max-width: 600px; margin: 20px auto; padding: 14px; }
