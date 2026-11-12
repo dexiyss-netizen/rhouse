@@ -206,32 +206,79 @@
                 </div>
 
             </div>
-        </section>
+                </section>
 
-
-        <!-- Раздел Послуги -->
-        <section id="services" style="padding: 60px 0 100px;">
+        <!-- Раздел Цены (Тарифы) -->
+        <section id="pricing" style="padding: 60px 0 100px; border-top: 1px solid rgba(255, 255, 255, 0.03);">
             <div class="container">
-                <h2 id="services-title" style="text-align: center; font-size: 38px; font-weight: 800; margin-bottom: 60px; background: linear-gradient(180deg, #fff 0%, #9ca3af 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Що ми вміємо робити чудово</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                    <div class="service-card" style="background: rgba(255, 255, 255, 0.01); border: 1px solid rgba(255, 255, 255, 0.04); padding: 45px 35px; border-radius: 14px; transition: all 0.3s ease;">
-                        <div style="font-size: 36px; margin-bottom: 15px;">💻</div>
-                        <h3 id="s1-title" style="font-size: 22px; margin-bottom: 12px; font-weight: 700;">Корпоративні сайти</h3>
-                        <p id="s1-desc" style="color: #9ca3af; font-size: 15px;">Ексклюзивний дизайн, що підкреслює статус вашої компанії. Швидке завантаження та повна адаптивність під смартфони.</p>
+                <h2 id="pricing-title" style="text-align: center; font-size: 38px; font-weight: 800; margin-bottom: 60px; background: linear-gradient(180deg, #fff 0%, #9ca3af 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Вартість розробки</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; align-items: stretch;">
+                    
+                    <!-- Тариф 1: Landing Page -->
+                    <div class="pricing-card" style="background: rgba(7, 5, 16, 0.82); backdrop-filter: blur(12px); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 16px; padding: 40px 30px; display: flex; flex-direction: column; text-align: center; transition: 0.3s;">
+                        <h3 id="p1-title" style="font-size: 24px; font-weight: 700; margin-bottom: 6px;">Landing Page</h3>
+                        <p id="p1-time" style="color: #9ca3af; font-size: 14px; margin-bottom: 25px;">Термін розробки: 4–7 днів</p>
+                        <div style="font-size: 42px; font-weight: 800; margin-bottom: 15px;"><span id="p-from-1" style="font-size: 16px; font-weight: 500; color: #9ca3af;">від</span> 100$</div>
+                        <p id="p1-desc" style="color: #9ca3af; font-size: 14px; margin-bottom: 30px; min-height: 44px;">Простий односторінковий сайт, візитка, під рекламу</p>
+                        
+                        <ul id="p1-list" style="list-style: none; text-align: left; margin-bottom: 35px; display: flex; flex-direction: column; gap: 12px; font-size: 15px; flex-grow: 1;">
+                            <li><span style="color: #10b981; margin-right: 8px;">✔</span> Адаптивний дизайн</li>
+                            <li><span style="color: #10b981; margin-right: 8px;">✔</span> SSL сертифікат</li>
+                            <li><span style="color: #10b981; margin-right: 8px;">✔</span> Контактна форма</li>
+                            <li><span style="color: #10b981; margin-right: 8px;">✔</span> Кнопки соцмереж</li>
+                            <li><span style="color: #10b981; margin-right: 8px;">✔</span> Будь-які доповнення</li>
+                            <li style="color: #6b7280;"><span style="color: #ef4444; margin-right: 8px;">✖</span> Домен ~ 15$ на рік</li>
+                            <li style="color: #6b7280;"><span style="color: #ef4444; margin-right: 8px;">✖</span> Сервер ~ 60$ на рік</li>
+                        </ul>
+                        
+                        <a href="#contact" class="btn-contact p-btn" style="width: 100%;">Замовити &gt;</a>
                     </div>
-                    <div class="service-card" style="background: rgba(255, 255, 255, 0.01); border: 1px solid rgba(255, 255, 255, 0.04); padding: 45px 35px; border-radius: 14px; transition: all 0.3s ease;">
-                        <div style="font-size: 36px; margin-bottom: 15px;">🛍️</div>
-                        <h3 id="s2-title" style="font-size: 22px; margin-bottom: 12px; font-weight: 700;">Інтернет-магазини</h3>
-                        <p id="s2-desc" style="color: #9ca3af; font-size: 15px;">Зручні каталоги, продумані кошики та інтеграція з платіжними системами для автоматизації ваших продажів.</p>
+
+                    <!-- Тариф 2: Корпоративний -->
+                    <div class="pricing-card featured" style="background: rgba(15, 10, 35, 0.88); backdrop-filter: blur(12px); border: 2px solid #a855f7; border-radius: 16px; padding: 40px 30px; display: flex; flex-direction: column; text-align: center; box-shadow: 0 15px 40px rgba(168, 85, 247, 0.25); transition: 0.3s;">
+                        <h3 id="p2-title" style="font-size: 24px; font-weight: 700; margin-bottom: 6px;">Корпоративний</h3>
+                        <p id="p2-time" style="color: #c084fc; font-size: 14px; margin-bottom: 25px;">Термін розробки: 7–12 днів</p>
+                        <div style="font-size: 42px; font-weight: 800; margin-bottom: 15px;"><span id="p-from-2" style="font-size: 16px; font-weight: 500; color: #9ca3af;">від</span> 300$</div>
+                        <p id="p2-desc" style="color: #d1d5db; font-size: 14px; margin-bottom: 30px; min-height: 44px;">Інформаційний сайт для організації, компанії</p>
+                        
+                        <ul id="p2-list" style="list-style: none; text-align: left; margin-bottom: 35px; display: flex; flex-direction: column; gap: 12px; font-size: 15px; flex-grow: 1;">
+                            <li><span style="color: #10b981; margin-right: 8px;">✔</span> Адаптивний дизайн</li>
+                            <li><span style="color: #10b981; margin-right: 8px;">✔</span> SSL сертифікат</li>
+                            <li><span style="color: #10b981; margin-right: 8px;">✔</span> CMS редактор контенту</li>
+                            <li><span style="color: #10b981; margin-right: 8px;">✔</span> Декілька сторінок</li>
+                            <li><span style="color: #10b981; margin-right: 8px;">✔</span> Будь-які доповнення</li>
+                            <li style="color: #9ca3af;"><span style="color: #ef4444; margin-right: 8px;">✖</span> Домен ~ 15$ на рік</li>
+                            <li style="color: #9ca3af;"><span style="color: #ef4444; margin-right: 8px;">✖</span> Сервер ~ 60$ на рік</li>
+                        </ul>
+                        
+                        <a href="#contact" class="btn-contact p-btn" style="width: 100%;">Замовити &gt;</a>
                     </div>
-                    <div class="service-card" style="background: rgba(255, 255, 255, 0.01); border: 1px solid rgba(255, 255, 255, 0.04); padding: 45px 35px; border-radius: 14px; transition: all 0.3s ease;">
-                        <div style="font-size: 36px; margin-bottom: 15px;">⚡</div>
-                        <h3 id="s3-title" style="font-size: 22px; margin-bottom: 12px; font-weight: 700;">Landing Page</h3>
-                        <p id="s3-desc" style="color: #9ca3af; font-size: 15px;">Односторінкові сайти з високою конверсією, що б'ють точно в ціль і перетворюють відвідувачів на клієнтів.</p>
+
+                    <!-- Тариф 3: Інтернет-магазин -->
+                    <div class="pricing-card" style="background: rgba(7, 5, 16, 0.82); backdrop-filter: blur(12px); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 16px; padding: 40px 30px; display: flex; flex-direction: column; text-align: center; transition: 0.3s;">
+                        <h3 id="p3-title" style="font-size: 24px; font-weight: 700; margin-bottom: 6px;">Інтернет-магазин</h3>
+                        <p id="p3-time" style="color: #9ca3af; font-size: 14px; margin-bottom: 25px;">Термін розробки: 10–14 днів</p>
+                        <div style="font-size: 42px; font-weight: 800; margin-bottom: 15px;"><span id="p-from-3" style="font-size: 16px; font-weight: 500; color: #9ca3af;">від</span> 500$</div>
+                        <p id="p3-desc" style="color: #9ca3af; font-size: 14px; margin-bottom: 30px; min-height: 44px;">Каталог, магазин, оформлення замовлення через кошик</p>
+                        
+                        <ul id="p3-list" style="list-style: none; text-align: left; margin-bottom: 35px; display: flex; flex-direction: column; gap: 12px; font-size: 15px; flex-grow: 1;">
+                            <li><span style="color: #10b981; margin-right: 8px;">✔</span> Адаптивний дизайн</li>
+                            <li><span style="color: #10b981; margin-right: 8px;">✔</span> SSL сертифікат</li>
+                            <li><span style="color: #10b981; margin-right: 8px;">✔</span> CMS редактор контенту</li>
+                            <li><span style="color: #10b981; margin-right: 8px;">✔</span> Функціонал магазину</li>
+                            <li><span style="color: #10b981; margin-right: 8px;">✔</span> Будь-які доповнення</li>
+                            <li style="color: #6b7280;"><span style="color: #ef4444; margin-right: 8px;">✖</span> Домен ~ 15$ на рік</li>
+                            <li style="color: #6b7280;"><span style="color: #ef4444; margin-right: 8px;">✖</span> Сервер ~ 60$ на рік</li>
+                        </ul>
+                        
+                        <a href="#contact" class="btn-contact p-btn" style="width: 100%;">Замовити &gt;</a>
                     </div>
+
                 </div>
             </div>
         </section>
+
         <style>
         .service-card, .pricing-card { background: rgba(7, 5, 16, 0.82) !important; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(168, 85, 247, 0.3) !important; }
         .service-card:hover, .pricing-card:hover { transform: translateY(-5px); border-color: #3b82f6 !important; background: rgba(15, 12, 32, 0.9) !important; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15); }
